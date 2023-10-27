@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width", initial-scale=1.0>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vritam</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="index.css">
   </head>
   <!-- Google tag (gtag.js) -->
@@ -17,27 +18,58 @@
     gtag('config', 'G-HLJ7XDJ3E0');
   </script>
   <body>
-    <div class="container">
-      <nav>
-        <input type="checkbox" id="nav" class="hidden">
-        <label for="nav" class="nav-btn">
-          <i></i>
-          <i></i>
-          <i></i>
-        </label>
-        <div class="logo">
-<!--           <a href="#">VRITAM</a> -->
+      <header>
+        <nav>
+          <input type="checkbox" id="nav" class="hidden">
+          <label for="nav" class="nav-btn">
+            <i></i>
+            <i></i>
+            <i></i>
+          </label>
+          <div class="logo">
+            <a href="index.html" id="logoLink"><img src=images/logo_copy.svg alt="Vritam Logo"></a>
+          </div>
+          <div class="nav-wrapper">
+            <ul>
+              <li><a href="index.html" id="homeLink">HOME</a></li>
+              <li><a href="about.html" id="aboutLink">ABOUT</a></li>
+              <li><a href="careers.html" id="careersLink">CAREERS</a></li>
+              <li><a href="mailto:admin@vritam.com">CONTACT</a></li>
+              </ul>
+          </div>
+        </nav>
+      </header>
+
+      <div class="video-container">
+        <video autoplay muted loop>
+            <source src="images/background_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay-content">
+          <span class="constant-text">We are </span>
+          <span class="animated-text" id="text"></span>
         </div>
-        <div class="nav-wrapper">
-          <ul>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">CAREERS</a></li>
-            <li><a href="mailto:admin@vritam.com">CONTACT</a></li>
-            </ul>
-        </div>
-      </nav>
+        <div class="permanent-text">Vritam is an investment management firm that utilizes mathematical and statistical methods to make investments programtically.</div>
+    </div>
 
 
+      <script src="main.js"></script>
 
   </body>
+
+  <!-- Footer Section -->
+  <footer>
+    <hr> <!-- Black line separator -->
+      <div class="footer-content">
+          <div class="copyright">
+              &copy; 2023 Vritam LP. All rights reserved.
+          </div>
+          <div class="logo">
+
+              <!-- <img src=logo_copy.svg alt="Vritam Logo"> -->
+          </div>
+      </div>
+
+  </footer>
+
 </html>

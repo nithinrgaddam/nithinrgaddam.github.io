@@ -18,7 +18,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100vh;
-  font-family: tahoma;
+  font-family: 'Orkney_Regular', tahoma, sans-serif;
   font-weight: 400px;
   background-position: center;
   background-size: cover;
@@ -41,6 +41,22 @@ header {
     position: sticky; /* Make the header sticky */
     top: 0; /* Stick to the top of the viewport */
     z-index: 1000; /* Ensure the header stays on top of other elements */
+}
+
+@font-face {
+  font-family: 'Orkney';  /* A name for the font */
+  src: url('Orkney_Regular.woff2') format('woff2'),
+       url('Orkney_Regular.woff') format('woff');  /* path to your font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+font-face {
+  font-family: 'Orkney_Bold';  /* A name for the font */
+  src: url('Orkney_Bold.woff2') format('woff2'),
+       url('Orkney_Bold.woff') format('woff');  /* path to your font file */
+  font-weight: bold;
+  font-style: bold;
 }
 
 nav {
@@ -76,7 +92,7 @@ nav {
 .video-container {
     position: relative;
     width: 100%;
-     height: 100vh;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -96,7 +112,7 @@ video {
     transform: translate(-50%, -50%);
     color: white;
     font-size: 24px;
-    font-family: tahoma;
+    font-family: 'Orkney_Regular', tahoma, sans-serif;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid white; /* Cursor */
@@ -117,7 +133,7 @@ video {
     transform: translate(-50%, 0);
     color: white;
     font-size: 25px;
-    font-family: tahoma;
+    font-family: 'Orkney_Regular', tahoma, sans-serif;
 }
 
 @keyframes typing {
@@ -136,7 +152,7 @@ video {
   display: flex; /* Use flexbox to arrange child elements side by side */
   align-items: center; /* Align items vertically in the center */
   color: white;
-  font-family: tahoma;
+  font-family: 'Orkney_Regular', tahoma, sans-serif;
   max-width: 90%; /* Ensure text doesn't exceed 90% of the viewport width */
 }
 
@@ -176,13 +192,13 @@ video {
 
 @media screen and (max-width: 600px) {
   .overlay-content {
-      font-size: 25px;
+      font-size: 30px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .overlay-content {
-      font-size: 20px;
+      font-size: 24px;
   }
 }
 
@@ -257,7 +273,7 @@ nav-wrapper a:hover, nav a.active {
 
 /* Footer Styles */
 footer {
-    background-color: #fff;
+    background-color: #f5f4f4;
     color: #000;
     padding: 20px 0;
     text-align: center;
@@ -282,6 +298,7 @@ footer {
 
 .logo img {
     width: 100%;
+    height: 100%;
     max-width: 200px; /* Adjust based on your logo's size */
     margin-bottom: 15px;
     margin-left: 5%;
@@ -343,6 +360,7 @@ main img {
   margin: 20px 0;
   margin-left: 11%;
   margin-right: 11%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* horizontal offset, vertical offset, blur radius, color */
 }
 
 .list {
@@ -408,7 +426,9 @@ button a:link {
   }
 
   .logo img {
-    width: 70%;  /* or any desired width for screens smaller than 768px */
+    width: 100%;  /* or any desired width for screens smaller than 768px */
+    height: 95%;
+    min-height: 40px;
   }
   
   .nav-wrapper {

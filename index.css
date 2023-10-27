@@ -66,7 +66,7 @@ nav {
 
 .logo { 
   float: left;
-  margin-left: 16px;
+  margin-left: 5%;
   margin-top: 0%;
 }
 
@@ -150,19 +150,20 @@ video {
   left: 50%;
   transform: translateX(-50%);
   display: flex; /* Use flexbox to arrange child elements side by side */
-  align-items: center; /* Align items vertically in the center */
+  align-items: left; /* Align items vertically in the center */
   color: white;
   font-family: 'Orkney_Regular', tahoma, sans-serif;
   max-width: 90%; /* Ensure text doesn't exceed 90% of the viewport width */
+  text-align: left;
 }
 
 .overlay-content {
-  top: calc(35% - 30px); /* Position it slightly above the center */
+  top: calc(30% - 30px); /* Position it slightly above the center */
   font-size: 54px;
 }
 
 .permanent-text {
-  top: calc(35% + 10px); /* Position it slightly below the center */
+  top: calc(30% + 10px); /* Position it slightly below the center */
   font-size: 24px;
   margin-top: 50px;
 }
@@ -180,25 +181,33 @@ video {
 
 @media screen and (max-width: 1200px) {
   .overlay-content {
-      font-size: 45px;
+      font-size: 40px;
   }
 }
 
 @media screen and (max-width: 900px) {
   .overlay-content {
-      font-size: 35px;
+      font-size: 30px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .overlay-content {
-      font-size: 30px;
+      font-size: 25px;
   }
+
+  .permanent-text {
+    font-size: 20px;
+}
 }
 
 @media screen and (max-width: 400px) {
   .overlay-content {
-      font-size: 24px;
+      font-size: 20px;
+  }
+
+  .permanent-text {
+      font-size: 16px;
   }
 }
 
@@ -488,7 +497,7 @@ button a:link {
     letter-spacing: 1.2px;
     transform: translateX(-20px);
     transition: all 0.2s ease;
-    pointer-events: auto;
+    pointer-events: none;
   }
   
   .nav-btn {
@@ -529,7 +538,6 @@ button a:link {
   
 #nav:checked + .nav-btn {
   transform: rotate(45deg);
-  
 }
 
 #nav:checked + .nav-btn li {
@@ -557,8 +565,10 @@ button a:link {
 #nav:checked ~ .nav-wrapper ul li a {
   opacity: 1;
   transform: translateX(0);
+  pointer-events: auto;
 }
 
 .hidden {
   display: none;
+  pointer-events: none;
 }

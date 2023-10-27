@@ -126,7 +126,6 @@ video {
   margin: 0 0 20px 0; /* This gives some space between the heading and the text */
 }
 
-
 .permanent-text {
     position: absolute;
     top: calc(50% + 30px); /* Position it just below the animated text */
@@ -161,6 +160,7 @@ video {
 .overlay-content {
   top: calc(30% - 30px); /* Position it slightly above the center */
   font-size: 54px;
+  left: 47%;
 }
 
 .permanent-text {
@@ -194,21 +194,13 @@ video {
 
 @media screen and (max-width: 600px) {
   .overlay-content {
-      font-size: 25px;
+      font-size: 27px;
   }
-
-  .permanent-text {
-    font-size: 20px;
-}
 }
 
 @media screen and (max-width: 400px) {
   .overlay-content {
-      font-size: 20px;
-  }
-
-  .permanent-text {
-      font-size: 16px;
+      font-size: 24px;
   }
 }
 

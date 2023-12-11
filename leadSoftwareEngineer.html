@@ -1,90 +1,154 @@
-<!DOCTYPE hmtl>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1.0>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vritam</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLJ7XDJ3E0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Vritam</title>
 
-    gtag('config', 'G-HLJ7XDJ3E0');
-  </script>
-  <body>
-    <header>
-      <nav>
-        <input type="checkbox" id="nav" class="hidden">
-        <label for="nav" class="nav-btn">
-          <i></i>
-          <i></i>
-          <i></i>
-        </label>
-        <div class="logo">
-          <a href="index.html" id="logoLink"><img src=images/logo_copy.svg alt="Vritam Logo"></a>
-        </div>
-        <div class="nav-wrapper">
-          <ul>
-            <li><a href="index.html" id="homeLink">HOME</a></li>
-            <li><a href="about.html" id="aboutLink">ABOUT</a></li>
-            <li><a href="careers.html" id="careersLink">CAREERS</a></li>
-            <li><a href="mailto:admin@vritam.com">CONTACT</a></li>
-            </ul>
-        </div>
-      </nav>
-      <hr>
-    </header>
-    <main>
-      <div class="job-title">Lead Software Engineer</div>
-      <div class="job-location">Santa Clara, California</div>
-      <br>
-      <br>
-      
-      <ul class="list">
-          <li class="list-item"><h3>Responsibilities</h3></li>
-            <li class="list-item-bullet">develop and support applications for all aspects of a computerized trading system, with a focus on order handling; real-time risk, regulatory, and operations reporting; and real-time accounting</li>
-            <li class="list-item-bullet">support complex models of the financial markets and trading algorithms in a real-time environment</li>
-          </ul>
-      <ul class="list">
-        <li class="list-item"><h3>Skills, Qualifications, and Experience</h3></li>
-          <li class="list-item-bullet">an advanced degree in computer science, mathematics, physics, statistics, or a related discipline</li>
-          <li class="list-item-bullet">an outstanding academic record</li>
-          <li class="list-item-bullet">experience in Python, AWS and programming tools in Linux</li>
-          <li class="list-item-bullet">strong computer programming and system design skills</li>
-        </ul>
-        <div class="separator"></div>
-        <br>
-        <div class="salary-range">
-          <p><b>Salary Range:</b> $130,000 - $170,000</p>
-          
-          <p><button class="apply-button"><a href="mailto:admin@vritam.com?subject=Application for Lead Software Engineer">Apply Now</a></button>
-          
-          <p>Vritam is an equal opportunity employer.</p>
-        </div>
-    </main>
-    
+    <link rel="shortcut icon" href="./images/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/locomotive-scroll.min.css">
 
-    <script src="main.js"></script>
+    <style>
+         .role-container { 
+            width: 90%; 
+            margin: auto; 
+            max-width: 1200px; 
+        }
+        .role-list { 
+            display: block; 
+            /* margin-top: 20px; */
+        }
+        .role { 
+            background: #080708; 
+            padding: 20px; 
+            margin-top: 20px; 
+            border-radius: 5px; 
+            color: white;
+        }
+    </style>
+</head>
+<body style="background:#101010">
 
-</body>
+    <div data-load-container>
+        <div class="o-scroll" data-scroll data-module-scroll="main" data-scroll-container>
 
-<!-- Footer Section -->
-<footer>
-    <div class="footer-content">
-        <div class="copyright">
-            &copy; 2023 Vritam LP. All rights reserved.
-        </div>
-        <div class="logo">
+            <!-- Header -->
+            <header>
+                <div class="container">
+
+                    <div class="header_flex">
+
+                        <!-- Main Menu -->
+                        <nav class="main_menu">
+
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="index.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="145" height="54" viewBox="0 0 145 54" fill="none">
+                                        <path d="M38.0775 2.47817C49.6146 7.89242 55.1518 19.3414 53.9603 29.6343C52.4687 42.5186 43.0787 51.7673 30.4577 53.7221C15.0637 56.1066 -1.63474 42.8695 0.128549 24.5644C1.9407 5.75201 21.8716 -5.20249 38.0775 2.47817ZM16.2381 4.8772C7.64342 9.7184 2.88402 16.7133 2.57439 26.917C2.13419 41.4238 15.2341 51.7747 27.2306 51.5291C44.4842 51.1759 56.318 33.7565 49.7907 17.795C44.9558 5.97184 31.1102 -1.31364 16.2381 4.8772Z" fill="white"/>
+                                        <path d="M135.878 37.1369C132.489 38.8184 131.162 38.009 131.249 34.5899C131.295 32.7488 131.283 30.9049 131.243 29.0634C131.222 28.1346 130.966 27.1942 129.813 27.2175C128.764 27.2386 128.279 28.0272 128.262 29.0157C128.224 31.1778 128.179 33.343 128.256 35.5027C128.313 37.0965 127.739 37.9017 126.081 37.9241C124.425 37.9464 123.55 37.3732 123.585 35.5512C123.655 31.9479 123.575 28.342 123.603 24.7375C123.62 22.5052 124.99 21.6824 126.844 22.9806C127.965 23.7652 128.688 23.8105 129.79 23.0942C131.254 22.1424 132.881 22.0938 134.254 23.2844C135.207 24.1099 135.891 23.7648 136.818 23.2894C140.448 21.428 143.205 22.9088 143.666 26.9265C144.003 29.8655 143.56 32.8431 144.097 35.7812C144.317 36.9816 143.555 37.5402 142.46 37.6991C141.006 37.9099 139.685 37.7581 139.124 36.1225C138.404 34.0234 138.724 31.8405 138.661 29.6865C138.633 28.7321 139.06 27.273 137.497 27.2782C136.021 27.2831 136.04 28.6361 135.936 29.7965C135.719 32.1918 136.56 34.5748 135.878 37.1369Z" fill="white"/>
+                                        <path d="M109.952 27.0728C107.969 24.3999 108.306 23.4405 111.309 22.7912C112.322 22.5721 113.356 22.4196 114.389 22.3294C117.819 22.0302 120.271 24.1805 120.465 27.6194C120.609 30.1633 120.171 32.7292 120.868 35.2582C121.124 36.1838 120.58 36.9884 119.845 37.5416C119.166 38.0526 118.406 37.8111 117.853 37.326C116.916 36.5044 116.168 36.5807 115.126 37.2554C113.27 38.4564 111.261 38.4265 109.568 36.9341C108.191 35.721 107.476 34.0942 107.981 32.1961C108.585 29.9303 110.181 28.7682 112.439 28.4097C113.355 28.2642 114.363 28.6591 115.303 27.8854C115.155 26.5832 114.318 26.2191 113.163 26.4101C112.143 26.5787 111.144 26.8743 109.952 27.0728ZM112.783 33.0267C113.103 34.4155 114.02 34.3393 114.927 33.7626C115.611 33.3273 115.757 32.3894 115.172 31.9107C114.186 31.1036 113.264 31.3881 112.783 33.0267Z" fill="white"/>
+                                        <path d="M73.1052 34.0791C72.5246 36.1188 72.2235 37.9053 69.4518 37.801C66.8359 37.7025 65.4877 36.6893 64.8787 34.2219C64.171 31.3545 63.2735 28.5344 62.4837 25.6867C62.1737 24.5689 61.473 23.2797 63.1661 22.6552C64.8492 22.0345 66.1899 22.6228 66.9625 24.2034C67.7034 25.719 67.9707 27.3844 68.2242 29.0525C68.402 30.2223 68.7995 31.3586 69.4802 32.5595C70.048 29.9283 70.7012 27.3116 71.1521 24.6605C71.4327 23.0113 72.3471 22.5915 73.825 22.63C75.3861 22.6706 76.0345 23.2649 75.5842 24.8808C74.749 27.8782 73.9758 30.8929 73.1052 34.0791Z" fill="white"/>
+                                        <path d="M105.402 22.6643C106.976 23.0587 106.878 24.1674 106.793 25.2064C106.712 26.174 106.015 26.5555 105.126 26.5992C103.874 26.6607 103.436 27.4285 103.524 28.5253C103.695 30.639 102.509 33.2635 105.802 34.2436C106.472 34.4429 106.599 35.5792 106.434 36.4154C106.267 37.258 105.622 37.5062 104.862 37.6539C100.59 38.4841 98.5863 36.8755 98.5553 32.5681C98.5461 31.2866 98.5363 30.0049 98.5078 28.7237C98.4831 27.6171 98.5654 26.6353 97.0888 26.082C95.7568 25.5828 95.7696 23.54 97.0822 22.8129C98.0806 22.2598 98.4122 21.5449 98.5942 20.566C98.919 18.8189 100.149 18.2591 101.754 18.2657C103.543 18.2731 103.468 19.6222 103.507 20.821C103.545 21.9629 103.97 22.6618 105.402 22.6643Z" fill="white"/>
+                                        <path d="M77.8468 28.6252C77.6771 27.6411 77.5829 26.8411 77.3254 26.0978C76.9332 24.9656 76.728 23.8433 77.7732 23.0241C78.8052 22.2153 79.7264 22.9439 80.593 23.5328C80.9808 23.7964 81.3565 24.0776 81.7466 24.3572C82.8039 23.8422 83.4283 22.7092 84.6564 22.683C85.6673 22.6614 86.9646 22.3268 87.1771 23.7726C87.3724 25.102 87.3295 26.925 85.6863 27.0979C82.6064 27.4219 82.3617 29.2571 82.5285 31.6392C82.6065 32.7537 82.4796 33.8819 82.5462 34.9979C82.6449 36.6506 82.3666 37.7692 80.2889 37.7893C78.2827 37.8086 77.5272 36.9793 77.6287 35.0676C77.7388 32.9919 77.7787 30.9125 77.8468 28.6252Z" fill="white"/>
+                                        <path d="M90.3069 35.7402C90.3371 33.6149 90.3628 31.6946 90.3576 29.7742C90.3548 28.723 90.2949 27.6109 89.5063 26.8521C88.2861 25.678 87.3957 24.4212 88.8281 22.9783C89.9737 21.8242 93.5118 22.7794 94.3195 24.3169C94.8059 25.2429 95.0759 26.2359 95.0638 27.3122C95.0332 30.033 95.0397 32.7544 95.0548 35.4755C95.0613 36.664 95.0574 37.831 93.401 37.77C92.0559 37.7204 90.2906 38.314 90.3069 35.7402Z" fill="white"/>
+                                        <path d="M93.5091 20.9231C91.8375 21.3116 90.2067 21.7515 89.5648 19.7691C89.2578 18.821 89.1812 17.6289 90.1588 16.9126C91.2149 16.1389 92.4469 16.2198 93.5323 16.8588C94.573 17.4715 94.616 18.5619 94.3715 19.6122C94.2705 20.0461 93.919 20.4216 93.5091 20.9231Z" fill="white"/>
+                                        <path d="M46.2643 15.1115C48.3648 18.3557 49.305 21.8118 49.6806 25.4329C49.7811 26.4029 50.0962 27.8349 48.6367 27.9456C47.1865 28.0555 47.3199 26.6306 47.2206 25.6301C46.2812 16.1648 39.9446 8.94057 30.9998 7.15419C20.2838 5.01405 9.40173 11.7599 7.22462 22.4036C4.89786 33.7788 10.8948 43.1472 21.3057 46.4784C22.8843 46.9835 24.6222 46.9897 26.2858 47.2309C27.098 47.3487 28.0277 47.4846 27.9636 48.54C27.9008 49.5766 26.9443 49.6943 26.1421 49.685C21.1327 49.6271 16.7255 47.7706 12.9031 44.7018C4.99881 38.3556 2.34858 28.4224 5.82559 18.9585C8.999 10.3211 17.9581 4.0634 27.2724 4.34759C35.3281 4.59337 41.6853 8.19534 46.2643 15.1115Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <!-- Menu -->
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="index.html" id="homeLink">home</a></li>
+                                    <li><a href="about.html" id="aboutLink">about</a></li>
+                                    <!-- <li><a href="blog.html" id="blogLink">blog</a></li> -->
+                                    <li class="menu_active"><a href="careers.html" id="careersLink">careers</a></li>
+                                    <li>
+                                        <button class="primary_btn" onclick="location.href='mailto:admin@vritam.com?subject=I would like to join the waitlist as an Investor';">
+                                            <span>Join the waitlist</span>
+                                            <svg width="31" height="18" viewBox="0 0 31 18" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0378 2.3932C19.677 1.7578 19.3333 0.98769 19.3333 0.25H21.3333C21.3333 0.43981 21.4478 0.825951 21.777 1.40555C22.0858 1.94932 22.5113 2.54048 22.9588 3.10133L22.9599 3.10269C24.0878 4.52152 25.4269 5.74822 26.9499 6.67926C27.5345 7.03658 28.1615 7.37436 28.768 7.62036C29.3855 7.87085 29.9188 8 30.3333 8V10C29.9187 10 29.3851 10.1292 28.7674 10.3797C28.1609 10.6256 27.534 10.9633 26.9504 11.3204C25.427 12.2529 24.0876 13.4799 22.9594 14.8967L22.9591 14.897C22.5117 15.4583 22.0861 16.0505 21.7771 16.5949C21.4477 17.1756 21.3333 17.5616 21.3333 17.75H19.3333C19.3333 17.0134 19.6772 16.2432 20.0377 15.6079C20.4187 14.9365 20.9148 14.2531 21.3948 13.6508C22.5054 12.2561 23.8142 11.0081 25.3072 10H0.333344V8H25.3066C23.8141 6.9929 22.5056 5.74495 21.3952 4.34844" fill="#fff"/>
+                                            </svg>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Menu Button -->
+                            <div class="menu_button">
+                                <button class="primary_btn" onclick="location.href='mailto:admin@vritam.com?subject=I would like to join the waitlist as an Investor';">
+                                    <span>Join the waitlist</span>
+                                    <svg width="31" height="18" viewBox="0 0 31 18" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0378 2.3932C19.677 1.7578 19.3333 0.98769 19.3333 0.25H21.3333C21.3333 0.43981 21.4478 0.825951 21.777 1.40555C22.0858 1.94932 22.5113 2.54048 22.9588 3.10133L22.9599 3.10269C24.0878 4.52152 25.4269 5.74822 26.9499 6.67926C27.5345 7.03658 28.1615 7.37436 28.768 7.62036C29.3855 7.87085 29.9188 8 30.3333 8V10C29.9187 10 29.3851 10.1292 28.7674 10.3797C28.1609 10.6256 27.534 10.9633 26.9504 11.3204C25.427 12.2529 24.0876 13.4799 22.9594 14.8967L22.9591 14.897C22.5117 15.4583 22.0861 16.0505 21.7771 16.5949C21.4477 17.1756 21.3333 17.5616 21.3333 17.75H19.3333C19.3333 17.0134 19.6772 16.2432 20.0377 15.6079C20.4187 14.9365 20.9148 14.2531 21.3948 13.6508C22.5054 12.2561 23.8142 11.0081 25.3072 10H0.333344V8H25.3066C23.8141 6.9929 22.5056 5.74495 21.3952 4.34844" fill="#fff"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                        </nav>
+                        
+                        <!-- Hamburger for Responsive Menu -->
+                        <div class="hamburger">
+                            <div class="line_one"></div>
+                            <div class="line_two"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </header>
+
+            <div hidden >
+              <span class="r_text"></span>
+            </div>
+
+            <section class="section_job">
+              <div class="job-title">Lead Software Engineer</div>
+              <div class="job-location">Santa Clara, California</div>
+              <br>
+              <br>
+              
+              <ul class="list">
+                  <li class="list-item"><h3>Responsibilities</h3></li>
+                    <li class="list-item-bullet">develop and support applications for all aspects of a computerized trading system, with a focus on order handling; real-time risk, regulatory, and operations reporting; and real-time accounting</li>
+                    <li class="list-item-bullet">support complex models of the financial markets and trading algorithms in a real-time environment</li>
+                  </ul>
+              <ul class="list">
+                <li class="list-item"><h3>Skills, Qualifications, and Experience</h3></li>
+                  <li class="list-item-bullet">an advanced degree in computer science, mathematics, physics, statistics, or a related discipline</li>
+                  <li class="list-item-bullet">an outstanding academic record</li>
+                  <li class="list-item-bullet">experience in Python, AWS and programming tools in Linux</li>
+                  <li class="list-item-bullet">strong computer programming and system design skills</li>
+                </ul>
+                <div class="separator"></div>
+                <br>
+                <div class="salary-range">
+                  <p><b>Salary Range:</b> $130,000 - $170,000</p>
+                  
+                  <p><button class="apply-button"><a href="mailto:admin@vritam.com?subject=Application for Lead Software Engineer">Apply Now</a></button>
+                  
+                  <p>Vritam is an equal opportunity employer.</p>
+                </div>
+              </section>
+
+            
+
+           
 
         </div>
     </div>
 
-</footer>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.7.4/smooth-scrollbar.js"></script>
+    <script src="./js/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="./js/app.js"></script>
+    
+</body>
 
 </html>

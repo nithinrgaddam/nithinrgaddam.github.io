@@ -26,7 +26,7 @@
 
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="#">
+                                <a href="index.html">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="145" height="54" viewBox="0 0 145 54" fill="none">
                                         <path d="M38.0775 2.47817C49.6146 7.89242 55.1518 19.3414 53.9603 29.6343C52.4687 42.5186 43.0787 51.7673 30.4577 53.7221C15.0637 56.1066 -1.63474 42.8695 0.128549 24.5644C1.9407 5.75201 21.8716 -5.20249 38.0775 2.47817ZM16.2381 4.8772C7.64342 9.7184 2.88402 16.7133 2.57439 26.917C2.13419 41.4238 15.2341 51.7747 27.2306 51.5291C44.4842 51.1759 56.318 33.7565 49.7907 17.795C44.9558 5.97184 31.1102 -1.31364 16.2381 4.8772Z" fill="white"/>
                                         <path d="M135.878 37.1369C132.489 38.8184 131.162 38.009 131.249 34.5899C131.295 32.7488 131.283 30.9049 131.243 29.0634C131.222 28.1346 130.966 27.1942 129.813 27.2175C128.764 27.2386 128.279 28.0272 128.262 29.0157C128.224 31.1778 128.179 33.343 128.256 35.5027C128.313 37.0965 127.739 37.9017 126.081 37.9241C124.425 37.9464 123.55 37.3732 123.585 35.5512C123.655 31.9479 123.575 28.342 123.603 24.7375C123.62 22.5052 124.99 21.6824 126.844 22.9806C127.965 23.7652 128.688 23.8105 129.79 23.0942C131.254 22.1424 132.881 22.0938 134.254 23.2844C135.207 24.1099 135.891 23.7648 136.818 23.2894C140.448 21.428 143.205 22.9088 143.666 26.9265C144.003 29.8655 143.56 32.8431 144.097 35.7812C144.317 36.9816 143.555 37.5402 142.46 37.6991C141.006 37.9099 139.685 37.7581 139.124 36.1225C138.404 34.0234 138.724 31.8405 138.661 29.6865C138.633 28.7321 139.06 27.273 137.497 27.2782C136.021 27.2831 136.04 28.6361 135.936 29.7965C135.719 32.1918 136.56 34.5748 135.878 37.1369Z" fill="white"/>
@@ -44,9 +44,9 @@
                             <!-- Menu -->
                             <div class="menu">
                                 <ul>
-                                    <li class="menu_active"><a href="index.html" id="homeLink">home</a></li>
+                                    <li><a href="index.html" id="homeLink">home</a></li>
                                     <li><a href="about.html" id="aboutLink">about</a></li>
-                                    <!-- <li><a href="blog.html" id="blogLink">blog</a></li> -->
+                                    <li class="menu_active"><a href="blog.html" id="blogLink">blog</a></li>
                                     <li><a href="careers.html" id="careersLink">careers</a></li>
                                     <li>
                                         <button class="primary_btn" onclick="location.href='mailto:admin@vritam.com?subject=I would like to join the waitlist as an Investor';">
@@ -83,178 +83,298 @@
             </header>
 
             <!-- Banner -->
-            <section id="banner">
+            <section id="about_banner">
                 <div class="container">
 
                     <div class="banner_items">
 
-                        <!-- Banner Small Text -->
-                        <div class="banner_sml_text">
-                            <h5>your money your business</h5>
+                        <!-- Breadcumbs -->
+                        <div class="breadcumbs">
+                            <h6>
+                                <a href="index.html">home</a>
+                                <span class="bc_gap">/</span>
+                                <span>blog</span>
+                            </h6>
                         </div>
 
-                        <!-- Banner Heading -->
-                        <div class="banner_heading">
-                            <h1>
-                                <span>we are</span> <br>
-                                <span class="r_text"></span>
-                            </h1>
+                        <div hidden >
+                            <span class="r_text"></span>
                         </div>
-
-                        <!-- Banner Text -->
-                        <div class="banner_sml_heading">
-                            <h4>
-                                <span>Vritam</span> is an investment management firm with a difference that utilizes
-                                mathematical and statistical methods to make investments programmatically.
-                            </h4>
-                        </div>
-
-                        <!-- Banner Button -->
-                        <div class="banner_button">
-                            <button class="bg_btn" onclick="location.href='mailto:admin@vritam.com?subject=I would like to join the waitlist as an Investor';">
-                                <span>get in touch</span>
-                                <svg width="31" height="18" viewBox="0 0 31 18" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0378 2.3932C19.677 1.7578 19.3333 0.98769 19.3333 0.25H21.3333C21.3333 0.43981 21.4478 0.825951 21.777 1.40555C22.0858 1.94932 22.5113 2.54048 22.9588 3.10133L22.9599 3.10269C24.0878 4.52152 25.4269 5.74822 26.9499 6.67926C27.5345 7.03658 28.1615 7.37436 28.768 7.62036C29.3855 7.87085 29.9188 8 30.3333 8V10C29.9187 10 29.3851 10.1292 28.7674 10.3797C28.1609 10.6256 27.534 10.9633 26.9504 11.3204C25.427 12.2529 24.0876 13.4799 22.9594 14.8967L22.9591 14.897C22.5117 15.4583 22.0861 16.0505 21.7771 16.5949C21.4477 17.1756 21.3333 17.5616 21.3333 17.75H19.3333C19.3333 17.0134 19.6772 16.2432 20.0377 15.6079C20.4187 14.9365 20.9148 14.2531 21.3948 13.6508C22.5054 12.2561 23.8142 11.0081 25.3072 10H0.333344V8H25.3066C23.8141 6.9929 22.5056 5.74495 21.3952 4.34844" fill="#fff"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- About us -->
-            <section id="about_us">
-                <div class="sec_gap">
-                    <div class="container">
+                        
+                        <!-- Banner items -->
                         <div class="row">
+                            <div class="banner_flex">
 
-                            <div class="about_flex">
-
-                                <!-- About Heading -->
-                                <div class="col_3">
+                                <!-- Banner Text -->
+                                <div class="col_5">
                                     <div class="col_gap">
-                                        <div class="section_heading">
-                                            <h6>what we do</h6>
+
+                                        <div class="about_banner_text">
+                                            <h5>We specialize in crafting automated trading strategies by
+                                                leveraging sophisticated mathematical approaches and advance
+                                                computer technologies.
+                                            </h5>
                                         </div>
+
                                     </div>
                                 </div>
 
-                                <!-- ABout Items -->
-                                <div class="col_9">
+                                <!-- Banner Heading -->
+                                <div class="col_7">
                                     <div class="col_gap">
 
-                                        <div class="about_items">
-                                            <div class="section_big_heading">
-                                                <h2>Harnessing Data for Financial Markets
-                                                </h2>
-                                            </div>
-                                            <div class="about_text">
-                                                <h5>
-                                                    We leverage vast amounts of data, including historical market data, economic indicators, and financial reports, to identify profitable trading opportunities. By employing sophisticated statistical and machine learning techniques, we analyze patterns and trends that are not easily discernible to human traders. The strategies developed are then automated and executed at high speeds, enabling us to capitalize on market inefficiencies and volatility. We are characterized by our focus on risk management, employing real-time monitoring systems to mitigate potential losses and adapt to changing market dynamics. Our approach combines finance, mathematics, and technology, representing a cutting-edge segment of the financial industry.
-                                                </h5>
-                                            </div>
-                                            <div class="about_button">
-                                                <button class="primary_btn">
-                                                    <span onclick="location.href='about.html'">more about us</span>
-                                                    <svg width="31" height="18" viewBox="0 0 31 18" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0378 2.3932C19.677 1.7578 19.3333 0.98769 19.3333 0.25H21.3333C21.3333 0.43981 21.4478 0.825951 21.777 1.40555C22.0858 1.94932 22.5113 2.54048 22.9588 3.10133L22.9599 3.10269C24.0878 4.52152 25.4269 5.74822 26.9499 6.67926C27.5345 7.03658 28.1615 7.37436 28.768 7.62036C29.3855 7.87085 29.9188 8 30.3333 8V10C29.9187 10 29.3851 10.1292 28.7674 10.3797C28.1609 10.6256 27.534 10.9633 26.9504 11.3204C25.427 12.2529 24.0876 13.4799 22.9594 14.8967L22.9591 14.897C22.5117 15.4583 22.0861 16.0505 21.7771 16.5949C21.4477 17.1756 21.3333 17.5616 21.3333 17.75H19.3333C19.3333 17.0134 19.6772 16.2432 20.0377 15.6079C20.4187 14.9365 20.9148 14.2531 21.3948 13.6508C22.5054 12.2561 23.8142 11.0081 25.3072 10H0.333344V8H25.3066C23.8141 6.9929 22.5056 5.74495 21.3952 4.34844" fill="#fff"/>
-                                                    </svg>
-                                                </button>
-                                            </div>
+                                        <div class="about_banner_heading">
+                                            <h2>
+                                                Our team consists of experts in mathematics, computer science,
+                                                statistics, physics, and engineering.
+                                            </h2>
                                         </div>
 
                                     </div>
                                 </div>
 
                             </div>
+                        </div>
 
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- About Description -->
+            <section id="about_des">
+                <div class="sec_gap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="about_des_flex">
+
+                                <!-- About Description Image -->
+                                <div class="col_5">
+                                    <div class="col_gap">
+
+                                        <div class="about_des_image">
+                                            <img src="./images/about_portrait.jpg" alt="Vritam">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- About Description Items -->
+                                <div class="col_7">
+                                    <div class="col_gap">
+                                        <div class="about_des_items">
+
+                                            <!-- Section Heading -->
+                                            <div class="section_heading">
+                                                <h6>Dictumst vitae <br> nulla nulla sed. <br> Risus in a.</h6>
+                                            </div>
+
+                                            <!-- About Heading -->
+                                            <div class="about_des_heading">
+                                                <h2>
+                                                    Gravida amet pellentesque eget aliquet tincidunt augue auctor cursus a.
+                                                </h2>
+                                            </div>
+
+                                            <!-- About Text -->
+                                            <div class="about_des_text">
+                                                <h5>Bibendum a nibh dolor eget urna porta. Aenean lacus urna
+                                                    consectetur lacus arcu. Platea et donec dis eu aliquam
+                                                    vulputate enim rhoncus. Sed sed tellus rhoncus in eget
+                                                    nullam dui vitae neque. Nulla viverra proin turpis ut
+                                                    ornare id lorem et convallis. Aenean scelerisque enim
+                                                    imperdiet nunc.
+                                                </h5>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Process -->
-            <section id="process">
+            <!-- Values -->
+            <section id="values">
                 <div class="sec_gap">
                     <div class="container">
 
-                        <!-- Process Heading -->
+                        <!-- Value Heading -->
                         <div class="section_heading">
-                            <h2>our process</h2>
+                            <h6>company "values"</h6>
+                            <h2>Nisi at tortor turpis <br> feugiat mauris in sit. <br> Ullamcorper non at.</h2>
                         </div>
 
-                        <!-- Processes -->
+                        <!-- Value Items -->
                         <div class="row">
-                            <div class="process_flex">
+                            <div class="value_flex">
 
-                                <!-- Steps 1 -->
+                                <!-- Value Image 1 -->
+                                <div class="col_3">
+                                    <div class="col_gap">
+                                        <div class="value_image">
+                                            <img src="./images/values_1.jpg" alt="Vritam">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Value Image 2 -->
+                                <div class="col_9">
+                                    <div class="col_gap">
+                                        <div class="value_image">
+                                            <img src="./images/values_2.jpg" alt="Vritam">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Value Item 1 -->
+                                <div class="col_3">
+                                    <div class="col_gap">
+                                        <div class="value_box mt_70">
+                                            <div class="value_heading">
+                                                <h4>
+                                                    <span class="value_numb">01</span>
+                                                    <span>/</span>
+                                                    <span class="value_name">Pellentesque</span>
+                                                </h4>
+                                            </div>
+                                            <div class="value_text">
+                                                <p>Commodo vulputate morbi congue vitae scelerisque pellentesque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Value Item 2 -->
+                                <div class="col_3">
+                                    <div class="col_gap">
+                                        <div class="value_box">
+                                            <div class="value_heading">
+                                                <h4>
+                                                    <span class="value_numb">02</span>
+                                                    <span>/</span>
+                                                    <span class="value_name">commodo</span>
+                                                </h4>
+                                            </div>
+                                            <div class="value_text">
+                                                <p>Commodo vulputate morbi congue vitae scelerisque pellentesque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Value Item 3 -->
+                                <div class="col_3">
+                                    <div class="col_gap">
+                                        <div class="value_box">
+                                            <div class="value_heading">
+                                                <h4>
+                                                    <span class="value_numb">03</span>
+                                                    <span>/</span>
+                                                    <span class="value_name">In scelerisque</span>
+                                                </h4>
+                                            </div>
+                                            <div class="value_text">
+                                                <p>Commodo vulputate morbi congue vitae scelerisque pellentesque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Value Item 4 -->
+                                <div class="col_3">
+                                    <div class="col_gap">
+                                        <div class="value_box">
+                                            <div class="value_heading">
+                                                <h4>
+                                                    <span class="value_numb">04</span>
+                                                    <span>/</span>
+                                                    <span class="value_name">Amet varius</span>
+                                                </h4>
+                                            </div>
+                                            <div class="value_text">
+                                                <p>Commodo vulputate morbi congue vitae scelerisque pellentesque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team -->
+            <section id="team">
+                <div class="sec_gap">
+                    <div class="container">
+
+                        <!-- Team Heading -->
+                        <div class="section_heading">
+                            <h6>our team</h6>
+                            <h2>our expert team.</h2>
+                        </div>
+
+                        <!-- Team Members -->
+                        <div class="row">
+                            <div class="team_flex">
+
+                                <!-- Team 1 -->
                                 <div class="col_4">
                                     <div class="col_gap">
 
-                                        <div class="step_flex">
-                                            <div class="steps_heading">
-                                                <h4>Data Collection and Analysis</h4>
+                                        <div class="team_box">
+                                            <div class="team_image">
+                                                <img src="./images/team_1.jpg" alt="Vritam">
                                             </div>
-                                            <div class="step_arrow">
-                                                <svg width="31" height="18" viewBox="0 0 31 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0378 2.3932C19.677 1.7578 19.3333 0.98769 19.3333 0.25H21.3333C21.3333 0.43981 21.4478 0.825951 21.777 1.40555C22.0858 1.94932 22.5113 2.54048 22.9588 3.10133L22.9599 3.10269C24.0878 4.52152 25.4269 5.74822 26.9499 6.67926C27.5345 7.03658 28.1615 7.37436 28.768 7.62036C29.3855 7.87085 29.9188 8 30.3333 8V10C29.9187 10 29.3851 10.1292 28.7674 10.3797C28.1609 10.6256 27.534 10.9633 26.9504 11.3204C25.427 12.2529 24.0876 13.4799 22.9594 14.8967L22.9591 14.897C22.5117 15.4583 22.0861 16.0505 21.7771 16.5949C21.4477 17.1756 21.3333 17.5616 21.3333 17.75H19.3333C19.3333 17.0134 19.6772 16.2432 20.0377 15.6079C20.4187 14.9365 20.9148 14.2531 21.3948 13.6508C22.5054 12.2561 23.8142 11.0081 25.3072 10H0.333344V8H25.3066C23.8141 6.9929 22.5056 5.74495 21.3952 4.34844" fill="#101010"/>
-                                                </svg>
+                                            <div class="team_member_name">
+                                                <h2>Jonathan Gray</h2>
                                             </div>
-                                        </div>
-
-                                        <div class="steps_text">
-                                            <p>
-                                                We start by collecting vast amounts of financial data. Which indludes stock prices, market indices, company financials, economic indicators, and more. Sophisticated statistical and machine learning techniques are then employed to analyze this data. The goal is to identify patterns, correlations, and other insights that are not readily apparent. This step is crucial because the quality and depth of analysis can significantly impact the success of the trading strategies developed.
-                                            </p>
+                                            <div class="team_designation">
+                                                <h6>analyst</h6>
+                                            </div>
                                         </div>
 
                                     </div>
                                 </div>
 
-                                <!-- Steps 2 -->
+                                <!-- Team 2 -->
                                 <div class="col_4">
                                     <div class="col_gap">
 
-                                        <div class="step_flex">
-                                            <div class="steps_heading">
-                                                <h4>Strategy Development</h4>
+                                        <div class="team_box">
+                                            <div class="team_image">
+                                                <img src="./images/team_2.jpg" alt="Vritam">
                                             </div>
-                                            <div class="step_arrow">
-                                                <svg width="31" height="18" viewBox="0 0 31 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0378 2.3932C19.677 1.7578 19.3333 0.98769 19.3333 0.25H21.3333C21.3333 0.43981 21.4478 0.825951 21.777 1.40555C22.0858 1.94932 22.5113 2.54048 22.9588 3.10133L22.9599 3.10269C24.0878 4.52152 25.4269 5.74822 26.9499 6.67926C27.5345 7.03658 28.1615 7.37436 28.768 7.62036C29.3855 7.87085 29.9188 8 30.3333 8V10C29.9187 10 29.3851 10.1292 28.7674 10.3797C28.1609 10.6256 27.534 10.9633 26.9504 11.3204C25.427 12.2529 24.0876 13.4799 22.9594 14.8967L22.9591 14.897C22.5117 15.4583 22.0861 16.0505 21.7771 16.5949C21.4477 17.1756 21.3333 17.5616 21.3333 17.75H19.3333C19.3333 17.0134 19.6772 16.2432 20.0377 15.6079C20.4187 14.9365 20.9148 14.2531 21.3948 13.6508C22.5054 12.2561 23.8142 11.0081 25.3072 10H0.333344V8H25.3066C23.8141 6.9929 22.5056 5.74495 21.3952 4.34844" fill="#101010"/>
-                                                </svg>
+                                            <div class="team_member_name">
+                                                <h2>Evelyn Rose</h2>
                                             </div>
-                                        </div>
-
-                                        <div class="steps_text">
-                                            <p>
-                                                Based on the insights gleaned from data analysis, we develop algorithmic trading strategies. These strategies are essentially sets of rules that dictate when to buy, sell, or hold various financial instruments. The strategies are rigorously tested using historical data in a process known as backtesting. This step is vital for understanding how the strategy might perform in different market conditions and for identifying potential risks.
-                                            </p>
+                                            <div class="team_designation">
+                                                <h6>scientist</h6>
+                                            </div>
                                         </div>
 
                                     </div>
                                 </div>
 
-                                <!-- Steps 3 -->
+                                <!-- Team 3 -->
                                 <div class="col_4">
                                     <div class="col_gap">
 
-                                        <div class="step_box">
-                                            <div class="step_box_items">
-
-                                                <div class="step_flex">
-                                                    <div class="steps_heading">
-                                                        <h4>Execution and Risk Management</h4>
-                                                    </div>
-                                                </div>
-                
-                                                <div class="steps_text">
-                                                    <p>
-                                                        Trades are executed using automated systems that can process large volumes of transactions very quickly. Throughout this process, risk management is a key focus. We continuously monitor our strategies and the market to manage the risks associated with our trades, such as market volatility or unexpected economic events. Adjustments to strategies are made as needed to optimize performance and mitigate risk.
-                                                    </p>
-                                                </div>
-
+                                        <div class="team_box">
+                                            <div class="team_image">
+                                                <img src="./images/team_3.jpg" alt="Vritam">
+                                            </div>
+                                            <div class="team_member_name">
+                                                <h2>Jeffrey Bishop</h2>
+                                            </div>
+                                            <div class="team_designation">
+                                                <h6>engineer</h6>
                                             </div>
                                         </div>
 
@@ -273,6 +393,9 @@
                 <div class="container">
 
                     <!-- Footer Headline -->
+                    <div class="section_heading">
+                        <h1>Get in <br> touch with us <br> today!</h1>
+                    </div>
 
                     <!-- Footer Socials -->
                     <div class="footer_socials">
@@ -303,11 +426,9 @@
 
                     <!-- Copyright -->
                     <div class="copyright">
-
                         <div class="c_info">
                             <p>©2023 <a href="index.html">Vritam</a> | All Rights Reserved </p>
                         </div>
-
                     </div>
 
                 </div>
@@ -315,15 +436,15 @@
 
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.7.4/smooth-scrollbar.js"></script>
+    <script src="./js/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="./js/app.js"></script>
     
 </body>
-
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.7.4/smooth-scrollbar.js"></script>
-<script src="./js/locomotive-scroll.min.js"></script>
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<script src="./js/app.js"></script>
 
 </html>

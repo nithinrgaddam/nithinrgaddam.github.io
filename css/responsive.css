@@ -215,6 +215,7 @@
     .about_text, .about_button {
         padding-left: 80px;
     }
+    
 
     /* Process */
     .p_vdo {
@@ -413,6 +414,35 @@
     .about_text, .about_button {
         padding-left: 0px;
     }
+    .about_banner_text {
+        font-size: 20px;
+    }
+    .about_heading_text {
+        font-size: 9px;
+    }
+    .about_des_text {
+        font-size: 17px;
+    }
+    .about_des_text2 {
+        font-size: 11px;
+    }
+    .value_numb {
+        font-size: 11px;
+    }
+    .value_name {
+        font-size: 11px;
+    }
+    .value_text {
+        font-size: 11px;
+    }
+    h6 {
+        font-size: 11px;
+    }
+    h2 {
+        font-size: 17px;
+    }
+
+    
 
     /* Process */
     .p_vdo {

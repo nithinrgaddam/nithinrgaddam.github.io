@@ -31,3 +31,11 @@ function typeWord() {
 }
 
 typeWord();
+
+document.addEventListener('DOMContentLoaded', function() {
+    var currentYear = new Date().getFullYear();
+    // Select the paragraph by its ID
+    var copyright = document.getElementById('copyright');
+    // Update its HTML content to include the current year dynamically
+    copyright.innerHTML = '© ' + currentYear + ' <a href="index.html">Vritam</a> | All Rights Reserved';
+  });

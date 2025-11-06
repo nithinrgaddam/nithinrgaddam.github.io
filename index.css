@@ -61,13 +61,13 @@ font-face {
 
 nav {
   padding: 18px;
-  padding-left: 9%;
+  padding-left: 0;
   height: 10%;
 }
 
 .logo { 
   float: left;
-  margin-left: 0;
+  margin-left: 9%;
   margin-top: 0%;
 }
 

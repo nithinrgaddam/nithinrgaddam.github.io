@@ -61,12 +61,13 @@ font-face {
 
 nav {
   padding: 18px;
+  padding-left: 9%;
   height: 10%;
 }
 
 .logo { 
   float: left;
-  left: 2%;
+  margin-left: 0;
   margin-top: 0%;
 }
 
@@ -77,7 +78,6 @@ nav {
   font-size: 18px;
   letter-spacing: 0px;
   text-decoration: none;
-  left: 2%;
 }
 
 .video-container::before {
@@ -302,11 +302,11 @@ footer {
 }
 
 .logo img {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     max-width: 200px; /* Adjust based on your logo's size */
+    max-height: 78px; /* Maintain proportional scaling */
     margin-bottom: 15px;
-    margin-left: 5%;
 }
 
 hr {
@@ -431,9 +431,10 @@ button a:link {
   }
 
   .logo img {
-    width: 100%;  /* or any desired width for screens smaller than 768px */
-    height: 93%;
-    min-height: 50px;
+    width: auto;
+    height: auto;
+    max-width: 150px; /* Smaller max-width for mobile screens */
+    max-height: 65px; /* Maintain proportional scaling */
   }
   
   .nav-wrapper {

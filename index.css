@@ -68,7 +68,9 @@ nav {
 .logo { 
   float: left;
   margin-left: 9%;
-  margin-top: 0%;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .logo a {
@@ -306,7 +308,7 @@ footer {
     height: auto;
     max-width: 200px; /* Adjust based on your logo's size */
     max-height: 78px; /* Maintain proportional scaling */
-    margin-bottom: 15px;
+    display: block;
 }
 
 hr {

@@ -574,9 +574,9 @@ button a:link {
 
 /* Contact Form Styles */
 .contact-container {
-  margin: 2% 10%;
+  margin: 2% 10% 2% 9.5%;
   max-width: 800px;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .contact-container .title {

@@ -571,3 +571,137 @@ button a:link {
   display: none;
   pointer-events: none;
 }
+
+/* Contact Form Styles */
+.contact-container {
+  margin: 2% 10%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.contact-container .title {
+  text-align: left;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin: 20px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.contact-info strong {
+  color: #000;
+}
+
+.contact-form {
+  margin-top: 40px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Orkney_Regular', tahoma, sans-serif;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Orkney_Regular', tahoma, sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.status-message {
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.status-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.submit-button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Mobile responsiveness for contact form */
+@media screen and (max-width: 768px) {
+  .contact-container {
+    margin: 2% 5%;
+    padding: 15px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 15px;
+  }
+}

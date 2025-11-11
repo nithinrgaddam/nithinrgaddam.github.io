@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("careersLink").classList.add("active");
     } else if (currentPage === "about.html") {
         document.getElementById("aboutLink").classList.add("active");
+    } else if (currentPage === "contact.html") {
+        document.getElementById("contactLink").classList.add("active");
     }
 
     // Text typing animation (only for pages that have the text element)

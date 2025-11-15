@@ -45,7 +45,7 @@
       <div class="contact-container">
         <div class="title">Contact Us</div>
         <div class="contact-info">
-          <p>Get in touch with us at: <strong>admin@vritam.com</strong></p>
+          <p>Get in touch with us at: <strong>investor-relations@vritam.com</strong></p>
         </div>
         
         <form id="contactForm" class="contact-form">
@@ -61,12 +61,6 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             <div id="emailError" class="error-message" style="display: none;">Please enter a valid email address.</div>
-          </div>
-          
-          <div class="form-group">
-            <label for="user_subject">Subject:</label>
-            <input type="text" id="user_subject" name="user_subject" required>
-            <div id="subjectError" class="error-message" style="display: none;">Subject must be at least 5 characters long.</div>
           </div>
           
           <div class="form-group">
@@ -108,12 +102,10 @@
         
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
-        const subject = document.getElementById('user_subject').value.trim();
         const message = document.getElementById('message').value.trim();
         
         const nameError = document.getElementById('nameError');
         const emailError = document.getElementById('emailError');
-        const subjectError = document.getElementById('subjectError');
         const messageError = document.getElementById('messageError');
         const statusMessage = document.getElementById('statusMessage');
         const submitBtn = document.getElementById('submitBtn');
@@ -121,7 +113,6 @@
         // Hide all error messages initially
         nameError.style.display = 'none';
         emailError.style.display = 'none';
-        subjectError.style.display = 'none';
         messageError.style.display = 'none';
         statusMessage.style.display = 'none';
         
@@ -137,12 +128,6 @@
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
           emailError.style.display = 'block';
-          hasErrors = true;
-        }
-        
-        // Validate subject
-        if (subject.length < 5) {
-          subjectError.style.display = 'block';
           hasErrors = true;
         }
         
@@ -164,12 +149,12 @@
         try {
           // Prepare form data for Web3Forms
           const formData = new FormData();
-          formData.append('access_key', '05e7b73c-ba6d-4b88-b1cc-de976bb22d77'); // Replace with actual access key
+          formData.append('access_key', 'c833112e-de9d-49ee-9692-6b42f9dd5d48'); // Replace with actual access key
           formData.append('name', name);
           formData.append('email', email);
-          formData.append('subject', `Contact Form: ${subject}`);
-          formData.append('message', `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`);
-          formData.append('to', 'admin@vritam.com');
+          formData.append('subject', `Contact Form: ${name}`);
+          formData.append('message', `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+          formData.append('to', 'investor-relations@vritam.com');
           
           // Submit form via AJAX
           const response = await fetch('https://api.web3forms.com/submit', {
@@ -194,7 +179,7 @@
           
         } catch (error) {
           console.error('Error:', error);
-          statusMessage.textContent = 'Failed to send message. Please try again or contact us directly at admin@vritam.com';
+          statusMessage.textContent = 'Failed to send message. Please try again or contact us directly at investor-relations@vritam.com';
           statusMessage.className = 'status-message error';
           statusMessage.style.display = 'block';
         } finally {
@@ -226,18 +211,6 @@
           emailError.style.display = 'block';
         } else {
           emailError.style.display = 'none';
-        }
-      });
-      
-      // Real-time validation for subject field
-      document.getElementById('user_subject').addEventListener('input', function() {
-        const subject = this.value.trim();
-        const subjectError = document.getElementById('subjectError');
-        
-        if (subject.length > 0 && subject.length < 5) {
-          subjectError.style.display = 'block';
-        } else {
-          subjectError.style.display = 'none';
         }
       });
       

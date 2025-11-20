@@ -298,6 +298,15 @@ footer {
     color: #000;
 }
 
+.footer-content a {
+    color: #000;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
 .copyright {
     font-size: 14px;
     left: 10%;
@@ -382,6 +391,15 @@ main img {
   margin-right: 13%;
   display: flex;
   justify-content: space-between;
+}
+
+.list-item a {
+  color: #000;
+  text-decoration: none;
+}
+
+.list-item a:hover {
+  text-decoration: underline;
 }
 
 /* display the bullet point here */

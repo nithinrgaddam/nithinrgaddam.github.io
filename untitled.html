@@ -98,7 +98,7 @@ let t=0;
 function frame(){
   requestAnimationFrame(frame);t+=.016;
   ctx.clearRect(0,0,W,H);
-  const ry=t*.06+mx*.15,rx=-.55+my*.08;
+  const ry=t*.06+mx*.15,rx=-.25+my*.08;
 
   // Atmospheric rim glow — concentrated at the globe edge, interior stays dark
   const g1=ctx.createRadialGradient(cx,cy,gR*.88,cx,cy,gR*1.25);

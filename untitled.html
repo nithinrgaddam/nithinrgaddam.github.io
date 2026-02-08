@@ -101,14 +101,14 @@ function frame(){
   const ry=t*.06+mx*.15,rx=-.25+my*.08;
 
   // Atmospheric glow — edge-only, drawn 3x for intensity
-  for(let gi=0;gi<3;gi++){
-  const g1=ctx.createRadialGradient(cx,cy,gR*.92,cx,cy,gR*1.5);
-  g1.addColorStop(0,'rgba(0,0,0,0)');g1.addColorStop(.15,'rgba(15,65,70,.2)');g1.addColorStop(.35,'rgba(12,55,60,.3)');g1.addColorStop(.55,'rgba(10,45,50,.15)');g1.addColorStop(.8,'rgba(8,35,40,.05)');g1.addColorStop(1,'rgba(0,0,0,0)');
+  for(let gi=0;gi<6;gi++){
+  const g1=ctx.createRadialGradient(cx,cy,gR*.97,cx,cy,gR*1.6);
+  g1.addColorStop(0,'rgba(0,0,0,0)');g1.addColorStop(.1,'rgba(15,65,70,.2)');g1.addColorStop(.3,'rgba(12,55,60,.3)');g1.addColorStop(.5,'rgba(10,45,50,.15)');g1.addColorStop(.75,'rgba(8,35,40,.05)');g1.addColorStop(1,'rgba(0,0,0,0)');
   ctx.fillStyle=g1;ctx.fillRect(0,0,W,H);
   }
 
   // Globe outline
-  ctx.beginPath();ctx.arc(cx,cy,gR*.995,0,Math.PI*2);ctx.strokeStyle='rgba(35,80,88,.1)';ctx.lineWidth=.8;ctx.stroke();
+  ctx.beginPath();ctx.arc(cx,cy,gR*.995,0,Math.PI*2);ctx.strokeStyle='rgba(30,90,100,.08)';ctx.lineWidth=.6;ctx.stroke();
 
   // Grid
   const dL=(pts,col,al,lw)=>{ctx.beginPath();let on=false;for(const pt of pts){const p=proj(pt[0],pt[1],pt[2],ry,rx);if(p.z<-.35){on=false;continue;}if(!on){ctx.moveTo(p.sx,p.sy);on=true;}else ctx.lineTo(p.sx,p.sy);}ctx.strokeStyle=col;ctx.globalAlpha=al;ctx.lineWidth=lw;ctx.stroke();ctx.globalAlpha=1;};

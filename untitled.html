@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vritam — Every Market. One Mind.</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#070a0c;--cream:#efe9dd;--cream60:rgba(210,204,192,.55);--navbg:rgba(12,18,22,.7);--navbrd:rgba(255,255,255,.055);--btnbg:rgba(255,255,255,.055);--btnbrd:rgba(255,255,255,.16)}
+html,body{height:100%}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden}
+.nav-w{position:fixed;top:0;left:0;right:0;z-index:100;padding:26px 36px;opacity:0;animation:fd 1s .3s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes fd{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:20px 38px;background:var(--navbg);border:1px solid var(--navbrd);border-radius:15px;backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px)}
+.logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.6rem;color:var(--cream);letter-spacing:-.01em;text-decoration:none}
+.nlinks{display:flex;gap:42px;list-style:none}
+.nlinks a{color:var(--cream60);text-decoration:none;font-size:.9rem;font-weight:400;letter-spacing:.02em;transition:color .3s}
+.nlinks a:hover{color:var(--cream)}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+#gc{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 75% 50% at 50% 66%,transparent 0%,var(--bg) 100%),radial-gradient(ellipse 80% 50% at 50% 36%,rgba(7,10,12,.55) 0%,transparent 70%)}
+.hc{position:relative;z-index:10;max-width:840px;padding:0 24px;margin-top:-6vh}
+h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(3rem,7.6vw,6.6rem);line-height:1.06;letter-spacing:-.03em;margin-bottom:24px;opacity:0;animation:ru .9s .7s cubic-bezier(.16,1,.3,1) forwards}
+.sub{font-size:clamp(.92rem,1.35vw,1.12rem);line-height:1.65;font-weight:300;color:var(--cream60);max-width:600px;margin:0 auto 38px;opacity:0;animation:ru .9s .95s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes ru{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.br{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:ru .9s 1.15s cubic-bezier(.16,1,.3,1) forwards}
+.b{padding:13px 32px;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:400;letter-spacing:.02em;cursor:pointer;text-decoration:none;transition:all .35s}
+.bp{background:var(--btnbg);border:1px solid var(--btnbrd);color:var(--cream);backdrop-filter:blur(10px)}
+.bp:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.26)}
+.bs{background:transparent;border:1px solid var(--btnbrd);color:var(--cream60)}
+.bs:hover{color:var(--cream);border-color:rgba(255,255,255,.28)}
+.cs{position:absolute;bottom:44px;left:0;right:0;z-index:10;display:flex;justify-content:center;gap:38px;flex-wrap:wrap;opacity:0;animation:ru .9s 1.5s cubic-bezier(.16,1,.3,1) forwards}
+.ci{font-size:.74rem;font-weight:400;letter-spacing:.11em;text-transform:uppercase;color:rgba(200,195,185,.22)}
+.sp{position:fixed;bottom:34px;right:38px;z-index:50;pointer-events:none;opacity:0;animation:ru .9s 1.8s cubic-bezier(.16,1,.3,1) forwards}
+.sp svg{width:26px;height:26px;fill:rgba(200,195,185,.18);animation:sr 6s ease-in-out infinite}
+@keyframes sr{0%,100%{transform:rotate(0) scale(1);opacity:.18}50%{transform:rotate(180deg) scale(1.12);opacity:.36}}
+@media(max-width:768px){.nav-w{padding:14px}nav{padding:14px 18px;border-radius:11px}.nlinks{gap:22px}.nlinks a{font-size:.8rem}.logo{font-size:1.3rem}.hc{margin-top:-3vh}.cs{gap:18px;bottom:20px;padding:0 14px}.ci{font-size:.65rem}.b{padding:11px 24px;font-size:.83rem}}
+@media(max-width:480px){.nlinks{gap:14px}.br{flex-direction:column;align-items:center}}
+</style>
+</head>
+<body>
+<div class="nav-w"><nav><a href="#" class="logo">Vritam</a><ul class="nlinks"><li><a href="#">Thesis</a></li><li><a href="#">Technology</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></nav></div>
+<section class="hero"><canvas id="gc"></canvas><div class="hc"><h1>Every Market.<br>One Mind.</h1><p class="sub">An AI-native hedge fund deploying autonomous intelligence across every financial and international market on earth.</p><div class="br"><a href="#" class="b bp">Request Access</a><a href="#" class="b bs">Read Our Thesis</a></div></div><div class="cs"><span class="ci">Global Markets</span><span class="ci">All Asset Classes</span><span class="ci">Fully Autonomous</span><span class="ci">AI-Native From Day One</span></div></section>
+<div class="sp"><svg viewBox="0 0 24 24"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4Z"/></svg></div>
+<script>
+const LAND="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//8AAb///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///+h//////6fAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/gD/5////////gAAAAAAAAACwBgAAAAPgAAAAAAAAAAAAAAAAAAAAAAAAAAA///+Af//////+AAAABrvwAAAAAAAAAAH8AAAAAAAAAAAAAAAAAAAAAAAAeHznn/w////////4AAAAB3sAAAAAAAAAAAAD4AAAAAAAAAAAAAAAAAAAAAAEcIA5M3AI///////4AAAAAPFAAAAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAABoCGc+r+AH///////wAAAAAAAAAAAAAB4AAAAA/+AAAAAAAAAAAAAAAAAAAAAD/wPz78AAAP/////+AAAAAAAAAAAAD4AAAA////AAAB9oAAAAAAAAAAAAAACAwACAIAAAAD/////+AAAAAAAAAAAAOAAAAH///6AAAAAAAAAAAAAAAAAAAAP+AY8+M/gAAD////+4AAAAAAAAAAAA4AAGH///+O+HQAOAAAAAAAAAAAAAAAfv+4/Q944AAB////+wAAAAAAAAAAABgAHlH///////4AHwAAAAAwAAAAAAAAON/8EY//9AABf///7gAAAAAAAAAAABwAPZ+///////4nv/gAAAAAAAP8gAAAAAP+A8f//8AA3///ogAAAAAABvgAAAAAfv+////////////8AAAAAB///+BfWH/+CuBhf8AA3////AAAAAABf/wAAAA8Pv///////////////H8wAP////////Q8BOzwD+AAf///wAAAAAAF///wMBe/3+/////////////////+AD////////+//f34Y/wA///4AAAAAAAD///+I////P//////////////////4EP///////////5gD/8A///gAAAAAAAf//5+P///8//////////////////jw/////////////qAD+YAf/wAAv8AAAA/8f+D///////////////////////AwAf///////////zwx/gAH/wAAP8AAAB/4/+f//////////////////////4AMAf//////////+DAAbgAH/gAADAAAAN/z/////////////////////////+AAH///////////4AwgGQAD/AAAAAAAA//H///////////////////////n/6AAP///////////wAA/AAAB/AAAAAAAB/+D//////////////////////jP+AAAH/9z////////gAA/wAAAMAAAAAACB//D1////////////////////+A/YAAAA/wAD///////gAA/wQAAAAAAAAAAB9/Ab///////////////////+uDgAAAAAB0AAf//////4AA/94AAAAAAAAAYA5+C///////////////////4AAHAAAAAABcAAP//////4AAf/8AAAAAAAAB8AA+i///////////////////wAAfgAAAAAMAAAC///////wAf/8AAAAAAAAAYAOeH///////////////////AAA/gAAAAAAAAAC///////8Af//AAAAAAAAAcAPQH//////////////////8AAA/AAAAAEAAAAAP///////z///wAAAAAAADuAETv//////////////////+AAA+AAAAAAAAAABP///////x///8AAAAAAAPHAX/////////////////////4AA8AAAAAAAAAAAj///////x///8AAAAAAAPPx//////////////////////6AAwAAAAAAAAAAAD///////////6AAAAAAAAPj//////////////////////6AAwAAAAAAAAAAACf//////////EAAAAAAAAQP//////////////////////zAAAAAAAAAAAAAABv////////+MNAAAAAAAAC///////////////////////zAAAAAAAAAAAAAAAP////////7wPgAAAAAAAf///////////////////////yAAAAAAAAAAAAAAAL/////////gCgAAAAAAAD///////////////////////iAAAAAAAAAAAAAAAP/////////pAAAAAAAAAD/////vP////////////////BAAAAAAAAAAAAAAAP/////////+AAAAAAAAAB//v//GP///////////////+AAAAAAAAAAAAAAAAP////////8wAAAAAAAAAB//H/+AP///////////////8CAAAAAAAAAAAAAAAP////////wAAAAAAAAADj/jx/+AD///////////////4HgAAAAAAAAAAAAAAP////////gAAAAAAAAAH/4Fw/8AA//////////////+ACAAAAAAAAAAAAAAAP////////gAAAAAAAAAH/wAcf8PB//////////////8AAAAAAAAAAAAAAAAAP///////8AAAAAAAAAAH/gMHfB///////////////v4AMAAAAAAAAAAAAAAAP///////8AAAAAAAAAAH/IMCOH//////////////+ZwAMAAAAAAAAAAAAAAAH///////4AAAAAAAQAAH/AACHP//////////////8BwAMAAAAAAAAAAAAAAAD///////wAAAAAAAAAAH+AAYCH//////////////+wYAYAAAAAAAAAAAAAAAD///////wAAAAAAAAAAAgf+AABs//////////////gYD4AAAAAAAAAAAAAAAB///////wAAAAAAAAAAAh/+AAAA//////////////A4PwAAAAAAAAAAAAAAAB///////gAAAAAAAAAAB//8AAAA//////////////Ah2AAAAAAAAAAAAAAAAAP/////+AAAAAAAAAAAD//+AAAB//////////////gjwAAAAAAAAAAAAAAAAAH/////4AAAAAAAAAAAH///4OAB//////////////gBAAAAAAAAAAAAAAAAAAG/////4AAAAAAAAAAAP///8P4D//////////////gCAAAAAAAAAAAAAAAAAACf////4AAAAAAAAAAAP////v////////////////gAAAAAAAAAAAAAAAAAAABv//hAYAAAAAAAAAAAP//////3//H///////////wAAAAAAAAAAAAAAAAAAAAv/+AAYAAAAAAAAAAAf/////////H///////////wAAAAAAAAAAAAAAAAAAAB3/+AAcAAAAAAAAAAB///////8//h///////////gAAAAAAAAAAAAAAAAAAAAZ/+AAMAAAAAAAAAAD///////8//wH//////////AAAAAAAAAAAAAAAAAAAAAJ/+AAEAAAAAAAAAAH///////+f/wB/f////////AAAAAAAAAAAAAAAAAAAAAI/8AAAAAAAAAAAAAH///////+f/4YAf///////8QAAAAAAAAAAAAAAAAAAAACf8AAAAAAAAAAAAAP////////H//+AP///////4gAAAAAAAAAAAAAAAAAAAAAP8AAvAAAAAAAAAAP////////H///AD///////AgAAAAAAAAAAAAAAAAAAAAAH8AQBgAAAAAAAAAf////////n//+ADf/4P//IAAAAAAAAAAAAAAAAAAAAAAAP+A4AYAAAAAAAAAP////////j//+AAf/4H/+IAAAAAAAAAAAAAAAgAAAAAAAH/B4ABwAAAAAAAAP////////h//8AAf/gD/8YAAAAAAAAAAAAAAAAAAAAAAAD/lwAD8AAAAAAAAP////////x//4AAf/AD/8QAAAAAAAAAAAAAAAAAAAAAAAAf/wAAAAAAAAAAAP////////4//gAAf+AB/+AAwAAAAAAAAAAAAAAAAAAAAAAH/wAAAAAAAAAAAP////////4f+AAAf8ADP/AAwAAAAAAAAAAAAAAAAAAAAAAAH/AAAAAAAAAAAf////////8f8AAAPwAAP/gAgAAAAAAAAAAAAAAAAAAAAAAAD/gAAAAAAAAAAf////////+fgAAAPwAAP/gAwAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAAAf/////////eAAAAHwAAN/gAsAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAf/////////gBAAAHwAAE/gACAAAAAAAAAAAAAAAAAAAAAAAADABIAAAAAAAAH/////////gIAAADwAAEfgALAAAAAAAAAAAAAAAAAAAAAAAADgPfIAAAAAAAH/////////34AAADwAAIOABAAAAAAAAAAAAAAAAAAAAAAAAAAyPf+AAAAAAAD//////////4AAADoAAIEACBAAAAAAAAAAAAAAAAAAAAAAAAA8///AAAAAAAB//////////wAAABIAAMAAAHAAAAAAAAAAAAAAAAAAAAAAAAAE///gAAAAAAA//////////wAAAAMAAEAAADgAAAAAAAAAAAAAAAAAAAAAAAAAf//wAAAAAAAf/7///////gAAAAMAADAAMDAAAAAAAAAAAAAAAAAAAAAAAAAAf///gAAAAAAP/B///////gAAAAAABDgAeAAAAAAAAAAAAAAAAAAAAAAAAAAAf///wAAAAAACAAn//////AAAAAAAAxgA+AAAAAAAAAAAAAAAAAAAAAAAAAAAf///4AAAAAAAAAD/////+AAAAAAAAZgB4AAAAAAAAAAAAAAAAAAAAAAAAAAA////4AAAAAAAAAD/////8AAAAAAAAMwH8AIAAAAAAAAAAAAAAAAAAAAAAAAB////8AAAAAAAAAD/////wAAAAAAAAHQf8AIAAAAAAAAAAAAAAAAAAAAAAAAD////4AAAAAAAAAH/////gAAAAAAAAHgf8cIAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAAH/////AAAAAAAAADof8ASgAAAAAAAAAAAAAAAAAAAAAAAH////u4AAAAAAAAH/////AAAAAAAAABwP5wQwAAAAAAAAAAAAAAAAAAAAAAAH////94AAAAAAAAD////+AAAAAAAAAB+P5wAD4AAAAAAAAAAAAAAAAAAAAAAH//////4AAAAAAAB////8AAAAAAAAAA8ARQif/AAAAAAAAAAAAAAAAAAAAAAH//////8AAAAAAAA////4AAAAAAAAAAcAAAAD/gAAAAAAAAAAAAAAAAAAAAAH///////gAAAAAAA////4AAAAAAAAAAMABAAI/ywAAAAAAAAAAAAAAAAAAAAD///////gAAAAAAA////4AAAAAAAAAADgAAAIf8BAAAAAAAAAAAAAAAAAAAAD///////gAAAAAAAf///4AAAAAAAAAAB+AABA/4AAAAAAAAAAAAAAAAAAAAAB///////gAAAAAAAf///4AAAAAAAAAAAAfsgAOMAAAAAAAAAAAAAAAAAAAAAA///////AAAAAAAAf///8AAAAAAAAAAAABCAAAGgAAAAAAAAAAAAAAAAAAAAA///////AAAAAAAAP///8AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAf/////+AAAAAAAAP///8AAAAAAAAAAAAAACgCAEAAAAAAAAAAAAAAAAAAAAAf/////8AAAAAAAAf///+AQAAAAAAAAAAAAB+CAAAAAAAQAAAAAAAAAAAAAAAP/////4AAAAAAAAf///+AwAAAAAAAAAAAAD8DAAAAAAAAAAAAAAAAAAAAAAAP/////4AAAAAAAA////+AwAAAAAAAAAAAAz8DgAAAAAAAAAAAAAAAAAAAAAAH/////4AAAAAAAA////+DwAAAAAAAAAAAD/8HgAAAAAAAAAAAAAAAAAAAAAAB/////4AAAAAAAA////8PwAAAAAAAAAAAH//XgAABABAAAAAgAAAAAAAAAAAAf////4AAAAAAAA////wPgAAAAAAAAAAAP//3wAAAAAAAAAAAAAAAAAAAAAAAP////wAAAAAAAA////gPgAAAAAAAAAAAP///wAAAAAAAAAAAAAAAAAAAAAAAP////wAAAAAAAAf//+APgAAAAAAAAAAAf///8AAAAAAAAAAAAAAAAAAAAAAAP////wAAAAAAAAf//+APgEAAAAAAAAAD////+AAIAAAAAAAAAAAAAAAAAAAAP////gAAAAAAAAP//+AfAAAAAAAAAAAf////+AAEAAAAAAAAAAAAAAAAAAAAP////AAAAAAAAAP///AfAAAAAAAAAAA//////AAAAAAAAAAAAAAAAAAAAAAAP///4AAAAAAAAAP//+APAAAAAAAAAAA//////gAAAAAAAAAAAAAAAAAAAAAAf///gAAAAAAAAAH//+AOAAAAAAAAAAB//////wAAAAAAAAAAAAAAAAAAAAAAf//+AAAAAAAAAAH//4AEAAAAAAAAAAA//////4AAAAAAAAAAAAAAAAAAAAAAf//+AAAAAAAAAAH//4AAAAAAAAAAAAB//////4AAAAAAAAAAAAAAAAAAAAAAf///AAAAAAAAAAH//4AAAAAAAAAAAAA//////8AAAAAAAAAAAAAAAAAAAAAAf//+AAAAAAAAAAD//wAAAAAAAAAAAAAf/////8AAAAAAAAAAAAAAAAAAAAAAf//8AAAAAAAAAAB//gAAAAAAAAAAAAAf/////4AAAAAAAAAAAAAAAAAAAAAA///8AAAAAAAAAAB//gAAAAAAAAAAAAAf/////4AAAAAAAAAAAAAAAAAAAAAA///wAAAAAAAAAAA//AAAAAAAAAAAAAAP/////4AAAAAAAAAAAAAAAAAAAAAAf//wAAAAAAAAAAA/+AAAAAAAAAAAAAAP/AP//wAAAAAAAAAAAAAAAAAAAAAA//vgAAAAAAAAAAA/4AAAAAAAAAAAAAAP8AG//gAAAAAAAAAAAAAAAAAAAAAA//3AAAAAAAAAAAAQAAAAAAAAAAAAAAAOAAF//gAAAAAAAAAAAAAAAAAAAAAB//4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//AAABAAAAAAAAAAAAAAAAAAB//4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/AAAAgAAAAAAAAAAAAAAAAAD//4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/AAAAQAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYAAAAcAAAAAAAAAAAAAAAAAB/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAAAAD/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAD/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAADQAAAAAAAAAAAAAAAAAB/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAHAAAAAAAAAAAAAAAAAAB/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAOAAAAAAAAAAAAAAAAAAB/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAAAAAH+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAAAAAH+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAP4AAAAAAD+HgBj/AAAAgAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAACf/gAAB//////////AAAAAAAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAAAB////8Af///////////gAAAAAAAAAAAAAAAAAAAAAB34AAAAAAAAAAAAAAAGD////4D/////////////8AAAAAAAAAAAAAAAAAAAAAb8AAAAAAAAAAAc/kB//////4f/////////////+gAAAAAAAAAAAAAAAAAAAB98AAAAAAAA7+///////////x////////////////4AAAAAAAAAAAAAAHAAAB5+AAAAAAAA/////////////n////////////////gAAAAAAAAABAAAAP/+Gl/+AAAAAAAP/////////////////////////////+AAAAAAAAAAiAfsAP/////+AAAAAAA//////////////////////////////oAAAAAAAAH////////////wAAAAAAF//////////////////////////////AAAAAAAAH////////////wAAAAAAf///////////////////////////////gAAAAAD+P///////////8AAAAAAP////////////////////////////////zgAAAAA////////////PgCAAD8A/////////////////////////////////+AAAAB4B////////////wwAAD+AA///////////////////////////////8AAAAAAAA////////////wA/A/gAH///////////////////////////////+AAAAABgf//////////////gAAA/////////////////////////////////+AAAAAAAH//////////////4D////////////////////////////////////4AAAB/X//////////////////////////////////////////////////////4A/gD/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////";
+const LB=Uint8Array.from(atob(LAND),c=>c.charCodeAt(0));
+function isLand(lat,lon){
+  const row=Math.floor((90-lat)/180*180);
+  const col=Math.floor(((lon%360+360+180)%360)/360*360);
+  if(row<0||row>=180||col<0||col>=360)return false;
+  return(LB[row*45+Math.floor(col/8)]>>(7-(col%8)))&1;
+}
+
+// Generate land dots
+const landDots=[];
+const step=1.2;
+for(let lat=89;lat>=-89;lat-=step){
+  const lonStep=step/Math.max(0.3,Math.cos(lat*Math.PI/180));
+  for(let lon=-180;lon<180;lon+=lonStep){
+    if(!isLand(lat,lon))continue;
+    const rl=lat+(Math.random()-.5)*step*.25;
+    const rn=lon+(Math.random()-.5)*lonStep*.25;
+    const phi=(90-rl)*Math.PI/180;
+    const theta=(rn+180)*Math.PI/180;
+    landDots.push([-Math.sin(phi)*Math.cos(theta),-Math.cos(phi),Math.sin(phi)*Math.sin(theta)]);
+  }
+}
+
+// Grid
+function gc(fn,n){const p=[];for(let i=0;i<=n;i++)p.push(fn(i/n));return p;}
+const latL=[],lonL=[];
+for(let lat=-60;lat<=60;lat+=30){const r=Math.cos(lat*Math.PI/180),y=-Math.sin(lat*Math.PI/180);latL.push(gc(t=>{const a=t*Math.PI*2;return[r*Math.cos(a),y,r*Math.sin(a)]},120));}
+for(let lon=0;lon<360;lon+=30)lonL.push(gc(t=>{const p=t*Math.PI;return[Math.sin(p)*Math.cos(lon*Math.PI/180),-Math.cos(p),Math.sin(p)*Math.sin(lon*Math.PI/180)]},120));
+
+// Hubs
+const hubs=[{n:'New York',lat:40.7,lon:-74},{n:'London',lat:51.5,lon:-.12},{n:'Tokyo',lat:35.7,lon:139.7},{n:'Mumbai',lat:19.1,lon:72.9},{n:'São Paulo',lat:-23.5,lon:-46.6},{n:'Hong Kong',lat:22.3,lon:114.2},{n:'Singapore',lat:1.35,lon:103.8},{n:'Zurich',lat:47.4,lon:8.54},{n:'Shanghai',lat:31.2,lon:121.5},{n:'Sydney',lat:-33.9,lon:151.2},{n:'Dubai',lat:25.2,lon:55.3},{n:'Frankfurt',lat:50.1,lon:8.68}];
+function ll(lat,lon){const p=(90-lat)*Math.PI/180,t=(lon+180)*Math.PI/180;return[-Math.sin(p)*Math.cos(t),-Math.cos(p),Math.sin(p)*Math.sin(t)];}
+const hXYZ=hubs.map(h=>ll(h.lat,h.lon));
+
+// Arcs
+const ap=[[0,1],[0,2],[0,4],[1,3],[1,7],[1,11],[2,5],[2,8],[3,6],[5,6],[8,9],[6,10],[7,11],[4,1],[10,3],[0,10],[2,9],[1,8],[3,5],[11,2]];
+function mkArc(p1,p2,n,alt){const pts=[],d=p1[0]*p2[0]+p1[1]*p2[1]+p1[2]*p2[2],om=Math.acos(Math.max(-1,Math.min(1,d))),sO=Math.sin(om)||1;for(let i=0;i<=n;i++){const t=i/n,a=Math.sin((1-t)*om)/sO,b=Math.sin(t*om)/sO,l=1+alt*4*t*(1-t);pts.push([(a*p1[0]+b*p2[0])*l,(a*p1[1]+b*p2[1])*l,(a*p1[2]+b*p2[2])*l]);}return pts;}
+const arcs=ap.map(([i,j])=>{const p1=hXYZ[i],p2=hXYZ[j],d=Math.sqrt((p1[0]-p2[0])**2+(p1[1]-p2[1])**2+(p1[2]-p2[2])**2);return{pts:mkArc(p1,p2,64,d*.17),sp:.25+Math.random()*.45,off:Math.random()*64,cl:[70+Math.random()*40|0,150+Math.random()*40|0,210+Math.random()*30|0]};});
+
+// Canvas
+const C=document.getElementById('gc'),ctx=C.getContext('2d');
+let W,H,cx,cy,gR;
+function resize(){const d=Math.min(devicePixelRatio,2);W=innerWidth;H=innerHeight;C.width=W*d;C.height=H*d;C.style.width=W+'px';C.style.height=H+'px';ctx.setTransform(d,0,0,d,0,0);cx=W*.5;cy=H*.62;gR=Math.min(W,H)*.38;}
+resize();addEventListener('resize',resize);
+let mx=0,my=0;addEventListener('mousemove',e=>{mx=(e.clientX/W-.5)*2;my=(e.clientY/H-.5)*2;});
+
+function proj(x,y,z,ry,rx){let x1=x*Math.cos(ry)+z*Math.sin(ry),z1=-x*Math.sin(ry)+z*Math.cos(ry),y1=y*Math.cos(rx)-z1*Math.sin(rx),z2=y*Math.sin(rx)+z1*Math.cos(rx);const f=3.8,s=f/(f+z2);return{sx:cx+x1*gR*s,sy:cy+y1*gR*s,z:z2,s};}
+
+let t=0;
+function frame(){
+  requestAnimationFrame(frame);t+=.016;
+  ctx.clearRect(0,0,W,H);
+  const ry=t*.1+mx*.28,rx=-.28+my*.1;
+
+  // Atmos
+  const ag=ctx.createRadialGradient(cx,cy,gR*.7,cx,cy,gR*1.35);
+  ag.addColorStop(0,'rgba(18,55,75,.07)');ag.addColorStop(.6,'rgba(12,40,60,.03)');ag.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.fillStyle=ag;ctx.fillRect(0,0,W,H);
+
+  // Globe outline
+  ctx.beginPath();ctx.arc(cx,cy,gR*.995,0,Math.PI*2);ctx.strokeStyle='rgba(40,75,95,.06)';ctx.lineWidth=.8;ctx.stroke();
+
+  // Grid
+  const dL=(pts,col,al,lw)=>{ctx.beginPath();let on=false;for(const pt of pts){const p=proj(pt[0],pt[1],pt[2],ry,rx);if(p.z<-.35){on=false;continue;}if(!on){ctx.moveTo(p.sx,p.sy);on=true;}else ctx.lineTo(p.sx,p.sy);}ctx.strokeStyle=col;ctx.globalAlpha=al;ctx.lineWidth=lw;ctx.stroke();ctx.globalAlpha=1;};
+  latL.forEach(p=>dL(p,'rgb(30,55,75)',.05,.4));lonL.forEach(p=>dL(p,'rgb(30,55,75)',.04,.4));
+
+  // Land dots
+  for(let i=0;i<landDots.length;i++){const d=landDots[i];const p=proj(d[0],d[1],d[2],ry,rx);if(p.z<-.15)continue;const a=Math.max(0,Math.min(.75,(p.z+.8)*.55));ctx.beginPath();ctx.arc(p.sx,p.sy,Math.max(.5,1.15*p.s),0,Math.PI*2);ctx.fillStyle=`rgba(55,140,175,${a})`;ctx.fill();}
+
+  // Arcs
+  arcs.forEach(arc=>{const pr=arc.pts.map(pt=>proj(pt[0],pt[1],pt[2],ry,rx));ctx.beginPath();let on=false;for(const p of pr){if(p.z<-.5){on=false;continue;}if(!on){ctx.moveTo(p.sx,p.sy);on=true;}else ctx.lineTo(p.sx,p.sy);}ctx.strokeStyle=`rgba(${arc.cl[0]},${arc.cl[1]},${arc.cl[2]},.1)`;ctx.lineWidth=.8;ctx.stroke();
+  const idx=Math.floor((t*arc.sp*30+arc.off)%64);const pp=pr[idx];if(pp&&pp.z>-.3){const g=ctx.createRadialGradient(pp.sx,pp.sy,0,pp.sx,pp.sy,7);g.addColorStop(0,'rgba(170,220,255,.65)');g.addColorStop(.4,'rgba(110,185,250,.15)');g.addColorStop(1,'rgba(80,160,240,0)');ctx.beginPath();ctx.arc(pp.sx,pp.sy,7,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();ctx.beginPath();ctx.arc(pp.sx,pp.sy,1.3,0,Math.PI*2);ctx.fillStyle='rgba(210,235,255,.85)';ctx.fill();}});
+
+  // Hubs
+  const hp=hXYZ.map(h=>proj(h[0],h[1],h[2],ry,rx));
+  hp.forEach((p,i)=>{if(p.z<-.2)return;const a=Math.max(0,Math.min(1,(p.z+.8)*.7));const g=ctx.createRadialGradient(p.sx,p.sy,0,p.sx,p.sy,16*p.s);g.addColorStop(0,`rgba(110,195,255,${.18*a})`);g.addColorStop(.5,`rgba(70,155,220,${.05*a})`);g.addColorStop(1,'rgba(50,130,200,0)');ctx.beginPath();ctx.arc(p.sx,p.sy,16*p.s,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();const pulse=.5+Math.sin(t*2.2+i)*.5;ctx.beginPath();ctx.arc(p.sx,p.sy,(5+pulse*5)*p.s,0,Math.PI*2);ctx.strokeStyle=`rgba(110,195,255,${.07*a})`;ctx.lineWidth=.5;ctx.stroke();ctx.beginPath();ctx.arc(p.sx,p.sy,2.4*p.s,0,Math.PI*2);ctx.fillStyle=`rgba(150,220,255,${.9*a})`;ctx.fill();});
+
+  // Labels
+  ctx.textBaseline='middle';
+  hubs.forEach((hub,i)=>{if(i>5)return;const p=hp[i];if(!p||p.z<.05)return;const a=Math.max(0,Math.min(.42,p.z*.42));if(a<.03)return;ctx.font=`300 ${11*p.s}px "DM Sans",system-ui,sans-serif`;const lx=p.sx+14*p.s;ctx.beginPath();ctx.arc(lx,p.sy,2*p.s,0,Math.PI*2);ctx.fillStyle=`rgba(130,200,255,${a*1.1})`;ctx.fill();const lg=ctx.createRadialGradient(lx,p.sy,0,lx,p.sy,5*p.s);lg.addColorStop(0,`rgba(110,190,255,${a*.35})`);lg.addColorStop(1,'rgba(90,170,240,0)');ctx.beginPath();ctx.arc(lx,p.sy,5*p.s,0,Math.PI*2);ctx.fillStyle=lg;ctx.fill();ctx.fillStyle=`rgba(185,198,215,${a})`;ctx.textAlign='left';ctx.fillText(hub.n,lx+6*p.s,p.sy);});
+}
+frame();
+</script>
+</body>
+</html>

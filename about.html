@@ -16,68 +16,112 @@
 </script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#070a0c;--cream:#f5f0e8;--cream60:rgba(220,214,204,.75);--navbg:rgba(12,18,22,.92);--navbrd:rgba(255,255,255,.1);--btnbg:rgba(255,255,255,.1);--btnbrd:rgba(255,255,255,.25)}
+:root{--bg:#070a0c;--cream:#f5f0e8;--cream60:rgba(220,214,204,.75);--navbg:rgba(12,18,22,.75);--navbrd:rgba(255,255,255,.1);--btnbg:rgba(255,255,255,.1);--btnbrd:rgba(255,255,255,.25);--card:#0d1117}
 html,body{height:100%}
 body{font-family:'Satoshi',system-ui,sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden}
 .nav-w{position:fixed;top:0;left:0;right:0;z-index:100;padding:26px 36px;opacity:0;animation:fd 1s .3s cubic-bezier(.16,1,.3,1) forwards}
 @keyframes fd{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
-nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:20px 38px;background:var(--navbg);border:1px solid var(--navbrd);border-radius:15px;backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px)}
+nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:20px 38px;background:var(--navbg);border:1px solid var(--navbrd);border-radius:15px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .logo{font-family:'Satoshi',sans-serif;font-weight:700;font-size:1.6rem;color:var(--cream);letter-spacing:-.01em;text-decoration:none}
 .nlinks{display:flex;gap:42px;list-style:none}
 .nlinks a{color:var(--cream60);text-decoration:none;font-size:.9rem;font-weight:400;letter-spacing:.02em;transition:color .3s}
 .nlinks a:hover{color:var(--cream)}
-.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:160px 24px 120px}
-.page-title{font-family:'Satoshi',sans-serif;font-weight:700;font-size:clamp(2rem,5vw,4rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:16px;text-align:center}
-.page-sub{font-size:clamp(.92rem,1.2vw,1.05rem);line-height:1.65;font-weight:300;color:var(--cream60);max-width:500px;text-align:center;margin-bottom:64px}
-.about-content{max-width:800px;width:100%;margin-bottom:80px}
-.about-text{font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.8;font-weight:300;color:var(--cream);margin-bottom:48px}
-.about-img{width:100%;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.06);margin-bottom:64px}
-.about-img img{display:block;width:100%;height:auto;filter:brightness(.85) contrast(1.05)}
-.values{max-width:800px;width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:80px}
-.value{padding:28px 24px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px}
-.value-title{font-size:.8rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--cream60);margin-bottom:12px}
-.value-desc{font-size:.92rem;font-weight:300;line-height:1.65;color:var(--cream)}
-.footer{width:100%;max-width:800px;margin:auto auto 0;padding:64px 0 0;border-top:1px solid rgba(255,255,255,.08);text-align:center}
+
+/* Approach section */
+.approach{max-width:1100px;width:100%;margin:0 auto;padding:180px 48px 120px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.approach-left{position:sticky;top:200px}
+.approach-heading{font-family:'Satoshi',sans-serif;font-weight:300;font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;letter-spacing:-.02em}
+.approach-items{display:flex;flex-direction:column;gap:56px;padding-top:16px}
+.approach-item-title{font-family:'Satoshi',sans-serif;font-weight:700;font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.25;letter-spacing:-.01em;margin-bottom:16px}
+.approach-item-desc{font-size:clamp(.9rem,1.1vw,1.02rem);line-height:1.7;font-weight:300;color:var(--cream60);max-width:440px}
+
+/* What's next section */
+.next{max-width:1100px;width:100%;margin:0 auto;padding:100px 48px 120px}
+.next-header{text-align:center;margin-bottom:80px}
+.next-label{font-size:.8rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--cream60);margin-bottom:20px}
+.next-title{font-family:'Satoshi',sans-serif;font-weight:700;font-size:clamp(1.8rem,4.5vw,3.4rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
+.next-sub{font-size:clamp(.9rem,1.1vw,1.02rem);line-height:1.7;font-weight:300;color:var(--cream60);max-width:600px;margin:0 auto}
+.next-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.next-card{padding:48px 40px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;display:flex;flex-direction:column;gap:24px}
+.next-card-icon{width:48px;height:48px;color:var(--cream)}
+.next-card-icon svg{width:48px;height:48px}
+.next-card-title{font-family:'Satoshi',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.01em}
+.next-card-desc{font-size:.95rem;line-height:1.7;font-weight:300;color:var(--cream60)}
+
+.footer{width:100%;max-width:1100px;margin:0 auto;padding:64px 48px 0;border-top:1px solid rgba(255,255,255,.08);text-align:center}
 .footer p{font-size:.78rem;color:rgba(210,205,195,.35);letter-spacing:.04em;padding-bottom:32px}
 .footer a{color:rgba(210,205,195,.5);text-decoration:none}
-@media(max-width:768px){.nav-w{padding:14px}nav{padding:14px 18px;border-radius:11px}.nlinks{gap:22px}.nlinks a{font-size:.8rem}.logo{font-size:1.3rem}.page{padding:130px 20px 60px}.values{grid-template-columns:1fr;gap:16px}}
+@media(max-width:768px){
+  .nav-w{padding:14px}nav{padding:14px 18px;border-radius:11px}.nlinks{gap:22px}.nlinks a{font-size:.8rem}.logo{font-size:1.3rem}
+  .approach{grid-template-columns:1fr;gap:48px;padding:140px 20px 80px}
+  .approach-left{position:static}
+  .next{padding:60px 20px 80px}
+  .next-cards{grid-template-columns:1fr}
+  .footer{padding:64px 20px 0}
+}
 @media(max-width:480px){.nlinks{gap:14px}}
 </style>
 </head>
 <body>
-<div class="nav-w"><nav><a href="untitled.html" class="logo">vritam</a><ul class="nlinks"><li><a href="untitled.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>
+<div class="nav-w"><nav><a href="index.html" class="logo">vritam</a><ul class="nlinks"><li><a href="index.html">Home</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>
 
-<div class="page">
-  <h1 class="page-title">About</h1>
-  <p class="page-sub">Building autonomous intelligence for every financial market on earth.</p>
-
-  <div class="about-content">
-    <p class="about-text">Our team consists of experts in mathematics, computer science, statistics, physics, and engineering. We specialize in crafting automated trading strategies by leveraging sophisticated mathematical approaches and advanced computer technologies.</p>
-
-    <div class="about-img">
-      <img src="images/about.jpg" alt="Vritam team">
+<section class="approach">
+  <div class="approach-left">
+    <h1 class="approach-heading">Our approach</h1>
+  </div>
+  <div class="approach-items">
+    <div class="approach-item">
+      <div class="approach-item-title">Large-scale models</div>
+      <div class="approach-item-desc">We develop expansive models engineered to operate across every market. Built for scale from the ground up, they learn from massive datasets that reflect the full depth of global finance.</div>
+    </div>
+    <div class="approach-item">
+      <div class="approach-item-title">Real-time prediction</div>
+      <div class="approach-item-desc">Our models generate forecasts continuously, updating as fresh data flows in. This enables decisions at sub-second speed in the most demanding environments.</div>
+    </div>
+    <div class="approach-item">
+      <div class="approach-item-title">Edge-first design</div>
+      <div class="approach-item-desc">Where most intelligence lives in the cloud, ours operates at the edge — cutting latency, reducing cost, and unlocking capabilities that only proximity to the source makes possible.</div>
     </div>
   </div>
+</section>
 
-  <div class="values">
-    <div class="value">
-      <div class="value-title">Research-Driven</div>
-      <div class="value-desc">Every strategy is grounded in rigorous quantitative research and tested against decades of market data.</div>
+<section class="next">
+  <div class="next-header">
+    <div class="next-label">What's next</div>
+    <h2 class="next-title">Intelligence that lives<br>where the action is</h2>
+    <p class="next-sub">We are moving past high-frequency trading toward autonomous systems capable of reasoning and acting in the moment.</p>
+  </div>
+  <div class="next-cards">
+    <div class="next-card">
+      <div class="next-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="28" width="8" height="14" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="20" y="18" width="8" height="24" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="34" y="8" width="8" height="34" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="next-card-title">Capital markets</div>
+      <div class="next-card-desc">Where we started — live prediction across fast-moving markets where every millisecond counts.</div>
     </div>
-    <div class="value">
-      <div class="value-title">Technology-First</div>
-      <div class="value-desc">Purpose-built infrastructure designed for low-latency execution across global markets.</div>
-    </div>
-    <div class="value">
-      <div class="value-title">Autonomous</div>
-      <div class="value-desc">Fully automated systems that operate around the clock, adapting to changing market conditions in real time.</div>
+    <div class="next-card">
+      <div class="next-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="8" width="28" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="19" cy="20" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="29" cy="20" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 36v-4h20v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M10 40h28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="next-card-title">Robotics & autonomy</div>
+      <div class="next-card-desc">Autonomous machines that sense their surroundings, learn on the fly, and respond to shifting conditions instantly.</div>
     </div>
   </div>
+</section>
 
-  <div class="footer">
-    <p>&copy; <a href="untitled.html">vritam</a> | All Rights Reserved</p>
+<div class="footer">
+  <p>&copy; <a href="index.html">vritam</a> | All Rights Reserved</p>
 <script>document.querySelector('.footer p').innerHTML=document.querySelector('.footer p').innerHTML.replace('©','© '+new Date().getFullYear());</script>
-  </div>
 </div>
 </body>
 </html>

@@ -93,7 +93,7 @@ const C=document.getElementById('gc'),ctx=C.getContext('2d');
 let W,H,cx,cy,gR;
 function resize(){const d=Math.min(devicePixelRatio,2);W=innerWidth;H=innerHeight;C.width=W*d;C.height=H*d;C.style.width=W+'px';C.style.height=H+'px';ctx.setTransform(d,0,0,d,0,0);cx=W*.5;cy=H*.95;gR=W*.336;}
 resize();addEventListener('resize',resize);
-let mx=0,my=0;addEventListener('mousemove',e=>{mx=(e.clientX/W-.5)*2;my=(e.clientY/H-.5)*2;});
+let mx=0,my=0,mxPx=0,myPx=0;addEventListener('mousemove',e=>{mx=(e.clientX/W-.5)*2;my=(e.clientY/H-.5)*2;mxPx=e.clientX;myPx=e.clientY;});
 
 function proj(x,y,z,ry,rx){let x1=x*Math.cos(ry)+z*Math.sin(ry),z1=-x*Math.sin(ry)+z*Math.cos(ry),y1=y*Math.cos(rx)-z1*Math.sin(rx),z2=y*Math.sin(rx)+z1*Math.cos(rx);const f=3.8,s=f/(f+z2);return{sx:cx+x1*gR*s,sy:cy+y1*gR*s,z:z2,s};}
 
@@ -101,7 +101,8 @@ let t=0;
 function frame(){
   requestAnimationFrame(frame);t+=.016;
   ctx.clearRect(0,0,W,H);
-  const ry=t*.06+mx*.25,rx=-.25+my*.12;
+  const ry=t*.06,rx=-.25;
+  const msx=mxPx,msy=myPx;
 
   // Atmospheric glow — edge-only, drawn 3x for intensity
   for(let gi=0;gi<6;gi++){
@@ -121,7 +122,7 @@ function frame(){
   orbits.forEach((pts,oi)=>{ctx.beginPath();let on=false;for(const pt of pts){const p=proj(pt[0],pt[1],pt[2],ry,rx);if(p.z<-.2){on=false;continue;}if(!on){ctx.moveTo(p.sx,p.sy);on=true;}else ctx.lineTo(p.sx,p.sy);}ctx.strokeStyle=`rgba(60,110,115,${.12+Math.sin(t*.5+oi)*.04})`;ctx.lineWidth=.5;ctx.stroke();});
 
   // Land dots
-  for(let i=0;i<landDots.length;i++){const d=landDots[i];const p=proj(d[0],d[1],d[2],ry,rx);if(p.z<-.15)continue;const a=Math.max(0,Math.min(1,(p.z+.8)*.8));ctx.beginPath();ctx.arc(p.sx,p.sy,Math.max(.7,1.4*p.s),0,Math.PI*2);ctx.fillStyle=`rgba(180,210,215,${a})`;ctx.fill();}
+  for(let i=0;i<landDots.length;i++){const d=landDots[i];const p=proj(d[0],d[1],d[2],ry,rx);if(p.z<-.15)continue;const a=Math.max(0,Math.min(1,(p.z+.8)*.8));const dx=p.sx-msx,dy=p.sy-msy,dist=Math.sqrt(dx*dx+dy*dy);const hlR=gR*.35,hl=Math.max(0,1-dist/hlR);const r=Math.max(.7,1.4*p.s)*(1+hl*1.8);const br=hl>.01;ctx.beginPath();ctx.arc(p.sx,p.sy,r,0,Math.PI*2);if(br){const cr=180+70*hl,cg=210+40*hl,cb=215+40*hl;ctx.fillStyle=`rgba(${cr|0},${cg|0},${cb|0},${Math.min(1,a+hl*.7)})`;} else {ctx.fillStyle=`rgba(180,210,215,${a})`;}ctx.fill();if(hl>.3){ctx.beginPath();ctx.arc(p.sx,p.sy,r*2.5,0,Math.PI*2);ctx.fillStyle=`rgba(170,220,255,${hl*.12*a})`;ctx.fill();}}
 
   // Arcs
   arcs.forEach(arc=>{const pr=arc.pts.map(pt=>proj(pt[0],pt[1],pt[2],ry,rx));ctx.beginPath();let on=false;for(const p of pr){if(p.z<-.5){on=false;continue;}if(!on){ctx.moveTo(p.sx,p.sy);on=true;}else ctx.lineTo(p.sx,p.sy);}ctx.strokeStyle=`rgba(${arc.cl[0]},${arc.cl[1]},${arc.cl[2]},.12)`;ctx.lineWidth=.7;ctx.stroke();

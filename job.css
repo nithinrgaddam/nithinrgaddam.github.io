@@ -1,0 +1,19 @@
+.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:160px 24px 120px}
+.back{align-self:flex-start;max-width:720px;width:100%;margin:0 auto 32px;font-size:.85rem;color:var(--cream60);text-decoration:none;transition:color .3s;display:inline-flex;align-items:center;gap:6px}
+.back:hover{color:var(--cream)}
+.job-header{max-width:720px;width:100%;margin-bottom:48px}
+.job-title{font-family:'Satoshi',sans-serif;font-weight:700;font-size:clamp(1.8rem,4vw,3rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:10px}
+.job-meta{font-size:.9rem;font-weight:300;color:var(--cream60)}
+.job-content{max-width:720px;width:100%;margin-bottom:48px}
+.section-title{font-size:.8rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--cream60);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.section{margin-bottom:36px}
+.section ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.section li{position:relative;padding-left:18px;font-size:.95rem;font-weight:300;line-height:1.6;color:var(--cream)}
+.section li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2)}
+.salary{font-size:1rem;font-weight:400;color:var(--cream);margin-bottom:64px}
+.salary b{font-weight:500}
+.apply-btn{display:inline-block;padding:14px 36px;border-radius:50px;font-family:'Satoshi',sans-serif;font-size:.9rem;font-weight:400;letter-spacing:.02em;cursor:pointer;background:var(--btnbg);border:1px solid var(--btnbrd);color:var(--cream);backdrop-filter:blur(10px);transition:all .35s;text-decoration:none;margin-bottom:24px}
+.apply-btn:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35)}
+.eeo{font-size:.82rem;font-weight:300;color:var(--cream60)}
+.footer{max-width:720px}
+@media(max-width:768px){.page{padding:130px 20px 60px}}

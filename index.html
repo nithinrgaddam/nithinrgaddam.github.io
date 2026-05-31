@@ -13,7 +13,7 @@ nav{backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px)}
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
 #gc{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:0;transform:scale(.95);animation:globeIn 1.5s .2s cubic-bezier(.16,1,.3,1) forwards}
 @keyframes globeIn{to{opacity:1;transform:scale(1)}}
-.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% 90%,transparent 0%,var(--bg) 100%),linear-gradient(to bottom,rgba(7,10,12,.65) 0%,rgba(7,10,12,.2) 30%,transparent 50%,transparent 100%)}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,transparent 90%,var(--bg) 100%),radial-gradient(ellipse 80% 50% at 50% 90%,transparent 0%,var(--bg) 100%),linear-gradient(to bottom,rgba(7,10,12,.65) 0%,rgba(7,10,12,.2) 30%,transparent 50%,transparent 100%)}
 .hc{position:relative;z-index:10;width:100%;padding:0 24px;margin-top:-14vh}
 h1{font-family:'Satoshi',sans-serif;font-weight:700;font-size:clamp(1.6rem,7.6vw,6.6rem);line-height:1.06;letter-spacing:-.03em;margin-bottom:24px;opacity:1;white-space:nowrap}
 h1 .char{opacity:0;display:inline-block}
@@ -29,11 +29,119 @@ h1 .char{opacity:0;display:inline-block}
 .ci{font-size:.74rem;font-weight:400;letter-spacing:.11em;text-transform:uppercase;color:rgba(210,205,195,.45)}
 @media(max-width:768px){.hc{margin-top:-3vh}.cs{gap:18px;bottom:20px;padding:0 14px}.ci{font-size:.65rem}.b{padding:15px 32px;font-size:.95rem}}
 @media(max-width:480px){.br{flex-direction:column;align-items:center}}
+.approach{max-width:1100px;width:100%;margin:0 auto;padding:180px 48px 120px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;scroll-margin-top:100px}
+.approach-left{position:sticky;top:200px}
+.approach-heading{font-family:'Satoshi',sans-serif;font-weight:300;font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;letter-spacing:-.02em}
+.approach-items{display:flex;flex-direction:column;gap:56px;padding-top:16px}
+.approach-item-title{font-family:'Satoshi',sans-serif;font-weight:700;font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.25;letter-spacing:-.01em;margin-bottom:16px}
+.approach-item-desc{font-size:clamp(.9rem,1.1vw,1.02rem);line-height:1.7;font-weight:300;color:var(--cream60);max-width:440px}
+.next{max-width:1100px;width:100%;margin:0 auto;padding:100px 48px 120px}
+.next-header{text-align:center;margin-bottom:80px}
+.next-label{font-size:.8rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--cream60);margin-bottom:20px}
+.next-title{font-family:'Satoshi',sans-serif;font-weight:700;font-size:clamp(1.8rem,4.5vw,3.4rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
+.next-sub{font-size:clamp(.9rem,1.1vw,1.02rem);line-height:1.7;font-weight:300;color:var(--cream60);max-width:600px;margin:0 auto}
+.next-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.next-card{padding:48px 40px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;display:flex;flex-direction:column;gap:24px}
+.next-card-icon{width:48px;height:48px;color:var(--cream)}
+.next-card-icon svg{width:48px;height:48px}
+.next-card-title{font-family:'Satoshi',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.01em}
+.next-card-desc{font-size:.95rem;line-height:1.7;font-weight:300;color:var(--cream60)}
+.footer{max-width:1100px;margin:0 auto;padding:64px 48px 0}
+@media(max-width:768px){
+  .approach{grid-template-columns:1fr;gap:48px;padding:140px 20px 80px}
+  .approach-left{position:static}
+  .next{padding:60px 20px 80px}
+  .next-cards{grid-template-columns:1fr}
+  .footer{padding:64px 20px 0}
+}
 </style>
 </head>
 <body>
-<div class="nav-w"><nav><a href="#" class="logo"><img src="images/just_logo.png" alt="" class="logo-img">vritam</a><ul class="nlinks"><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>
+<div class="nav-w"><nav><a href="#" class="logo"><img src="images/just_logo.png" alt="" class="logo-img">vritam</a><ul class="nlinks"><li><a href="#about">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>
 <section class="hero"><canvas id="gc"></canvas><div class="hc"><h1>Every Market<br>One Mind</h1><p class="sub">An AI lab running a hedge fund as Phase 1 — deploying autonomous intelligence across every financial market on earth.</p><div class="br"><a href="contact.html" class="b bp">Get in touch</a></div></div><div class="cs"><span class="ci">All Asset Classes</span><span class="ci">Fully Autonomous</span><span class="ci">20<span style="text-transform:lowercase">ms</span> to Year Time Frame</span><span class="ci">Global Markets</span></div></section>
+
+<section class="approach" id="about">
+  <div class="approach-left">
+    <h2 class="approach-heading">Our approach</h2>
+  </div>
+  <div class="approach-items">
+    <div class="approach-item">
+      <div class="approach-item-title">Large-scale models</div>
+      <div class="approach-item-desc">We develop expansive models engineered to operate across every market. Built for scale from the ground up, they learn from massive datasets that reflect the full depth of global finance.</div>
+    </div>
+    <div class="approach-item">
+      <div class="approach-item-title">Real-time prediction</div>
+      <div class="approach-item-desc">Our models generate forecasts continuously, updating as fresh data flows in. This enables decisions at sub-second speed in the most demanding environments.</div>
+    </div>
+    <div class="approach-item">
+      <div class="approach-item-title">Edge-first design</div>
+      <div class="approach-item-desc">Where most intelligence lives in the cloud, ours operates at the edge — cutting latency, reducing cost, and unlocking capabilities that only proximity to the source makes possible.</div>
+    </div>
+  </div>
+</section>
+
+<section class="next">
+  <div class="next-header">
+    <div class="next-label">What's next</div>
+    <h2 class="next-title">Intelligence that lives<br>where the action is</h2>
+    <p class="next-sub">We are moving past high-frequency trading toward autonomous systems capable of reasoning and acting in the moment.</p>
+  </div>
+  <div class="next-cards">
+    <div class="next-card">
+      <div class="next-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="28" width="8" height="14" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="20" y="18" width="8" height="24" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="34" y="8" width="8" height="34" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="next-card-title">Capital markets</div>
+      <div class="next-card-desc">Where we started — live prediction across fast-moving markets where every millisecond counts.</div>
+    </div>
+    <div class="next-card">
+      <div class="next-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="8" width="28" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="19" cy="20" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="29" cy="20" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 36v-4h20v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M10 40h28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="next-card-title">Robotics & autonomy</div>
+      <div class="next-card-desc">Autonomous machines that sense their surroundings, learn on the fly, and respond to shifting conditions instantly.</div>
+    </div>
+    <div class="next-card">
+      <div class="next-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="14" y="14" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="19" y="19" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M20 14V8M24 14V8M28 14V8M20 40v-6M24 40v-6M28 40v-6M14 20H8M14 24H8M14 28H8M40 20h-6M40 24h-6M40 28h-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="next-card-title">Custom FPGA chips</div>
+      <div class="next-card-desc">Purpose-built silicon for high-frequency trading — collapsing decision latency to nanoseconds where software alone cannot compete.</div>
+    </div>
+    <div class="next-card">
+      <div class="next-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="1.5"/>
+          <ellipse cx="24" cy="24" rx="18" ry="7" stroke="currentColor" stroke-width="1.5"/>
+          <ellipse cx="24" cy="24" rx="18" ry="7" stroke="currentColor" stroke-width="1.5" transform="rotate(60 24 24)"/>
+          <ellipse cx="24" cy="24" rx="18" ry="7" stroke="currentColor" stroke-width="1.5" transform="rotate(120 24 24)"/>
+        </svg>
+      </div>
+      <div class="next-card-title">Quantum computing</div>
+      <div class="next-card-desc">Harnessing quantum mechanics to solve problems classical hardware cannot reach — from optimization to simulation at unprecedented scale.</div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="footer-social"><a href="https://www.linkedin.com/company/vritam" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div>
+  <p>&copy; <a href="index.html">vritam</a> | All Rights Reserved</p>
+<script>document.querySelector('.footer p').innerHTML=document.querySelector('.footer p').innerHTML.replace('©','© '+new Date().getFullYear());</script>
+</div>
 <script>
 const LAND="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//8AAb///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///+h//////6fAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/gD/5////////gAAAAAAAAACwBgAAAAPgAAAAAAAAAAAAAAAAAAAAAAAAAAA///+Af//////+AAAABrvwAAAAAAAAAAH8AAAAAAAAAAAAAAAAAAAAAAAAeHznn/w////////4AAAAB3sAAAAAAAAAAAAD4AAAAAAAAAAAAAAAAAAAAAAEcIA5M3AI///////4AAAAAPFAAAAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAABoCGc+r+AH///////wAAAAAAAAAAAAAB4AAAAA/+AAAAAAAAAAAAAAAAAAAAAD/wPz78AAAP/////+AAAAAAAAAAAAD4AAAA////AAAB9oAAAAAAAAAAAAAACAwACAIAAAAD/////+AAAAAAAAAAAAOAAAAH///6AAAAAAAAAAAAAAAAAAAAP+AY8+M/gAAD////+4AAAAAAAAAAAA4AAGH///+O+HQAOAAAAAAAAAAAAAAAfv+4/Q944AAB////+wAAAAAAAAAAABgAHlH///////4AHwAAAAAwAAAAAAAAON/8EY//9AABf///7gAAAAAAAAAAABwAPZ+///////4nv/gAAAAAAAP8gAAAAAP+A8f//8AA3///ogAAAAAABvgAAAAAfv+////////////8AAAAAB///+BfWH/+CuBhf8AA3////AAAAAABf/wAAAA8Pv///////////////H8wAP////////Q8BOzwD+AAf///wAAAAAAF///wMBe/3+/////////////////+AD////////+//f34Y/wA///4AAAAAAAD///+I////P//////////////////4EP///////////5gD/8A///gAAAAAAAf//5+P///8//////////////////jw/////////////qAD+YAf/wAAv8AAAA/8f+D///////////////////////AwAf///////////zwx/gAH/wAAP8AAAB/4/+f//////////////////////4AMAf//////////+DAAbgAH/gAADAAAAN/z/////////////////////////+AAH///////////4AwgGQAD/AAAAAAAA//H///////////////////////n/6AAP///////////wAA/AAAB/AAAAAAAB/+D//////////////////////jP+AAAH/9z////////gAA/wAAAMAAAAAACB//D1////////////////////+A/YAAAA/wAD///////gAA/wQAAAAAAAAAAB9/Ab///////////////////+uDgAAAAAB0AAf//////4AA/94AAAAAAAAAYA5+C///////////////////4AAHAAAAAABcAAP//////4AAf/8AAAAAAAAB8AA+i///////////////////wAAfgAAAAAMAAAC///////wAf/8AAAAAAAAAYAOeH///////////////////AAA/gAAAAAAAAAC///////8Af//AAAAAAAAAcAPQH//////////////////8AAA/AAAAAEAAAAAP///////z///wAAAAAAADuAETv//////////////////+AAA+AAAAAAAAAABP///////x///8AAAAAAAPHAX/////////////////////4AA8AAAAAAAAAAAj///////x///8AAAAAAAPPx//////////////////////6AAwAAAAAAAAAAAD///////////6AAAAAAAAPj//////////////////////6AAwAAAAAAAAAAACf//////////EAAAAAAAAQP//////////////////////zAAAAAAAAAAAAAABv////////+MNAAAAAAAAC///////////////////////zAAAAAAAAAAAAAAAP////////7wPgAAAAAAAf///////////////////////yAAAAAAAAAAAAAAAL/////////gCgAAAAAAAD///////////////////////iAAAAAAAAAAAAAAAP/////////pAAAAAAAAAD/////vP////////////////BAAAAAAAAAAAAAAAP/////////+AAAAAAAAAB//v//GP///////////////+AAAAAAAAAAAAAAAAP////////8wAAAAAAAAAB//H/+AP///////////////8CAAAAAAAAAAAAAAAP////////wAAAAAAAAADj/jx/+AD///////////////4HgAAAAAAAAAAAAAAP////////gAAAAAAAAAH/4Fw/8AA//////////////+ACAAAAAAAAAAAAAAAP////////gAAAAAAAAAH/wAcf8PB//////////////8AAAAAAAAAAAAAAAAAP///////8AAAAAAAAAAH/gMHfB///////////////v4AMAAAAAAAAAAAAAAAP///////8AAAAAAAAAAH/IMCOH//////////////+ZwAMAAAAAAAAAAAAAAAH///////4AAAAAAAQAAH/AACHP//////////////8BwAMAAAAAAAAAAAAAAAD///////wAAAAAAAAAAH+AAYCH//////////////+wYAYAAAAAAAAAAAAAAAD///////wAAAAAAAAAAAgf+AABs//////////////gYD4AAAAAAAAAAAAAAAB///////wAAAAAAAAAAAh/+AAAA//////////////A4PwAAAAAAAAAAAAAAAB///////gAAAAAAAAAAB//8AAAA//////////////Ah2AAAAAAAAAAAAAAAAAP/////+AAAAAAAAAAAD//+AAAB//////////////gjwAAAAAAAAAAAAAAAAAH/////4AAAAAAAAAAAH///4OAB//////////////gBAAAAAAAAAAAAAAAAAAG/////4AAAAAAAAAAAP///8P4D//////////////gCAAAAAAAAAAAAAAAAAACf////4AAAAAAAAAAAP////v////////////////gAAAAAAAAAAAAAAAAAAABv//hAYAAAAAAAAAAAP//////3//H///////////wAAAAAAAAAAAAAAAAAAAAv/+AAYAAAAAAAAAAAf/////////H///////////wAAAAAAAAAAAAAAAAAAAB3/+AAcAAAAAAAAAAB///////8//h///////////gAAAAAAAAAAAAAAAAAAAAZ/+AAMAAAAAAAAAAD///////8//wH//////////AAAAAAAAAAAAAAAAAAAAAJ/+AAEAAAAAAAAAAH///////+f/wB/f////////AAAAAAAAAAAAAAAAAAAAAI/8AAAAAAAAAAAAAH///////+f/4YAf///////8QAAAAAAAAAAAAAAAAAAAACf8AAAAAAAAAAAAAP////////H//+AP///////4gAAAAAAAAAAAAAAAAAAAAAP8AAvAAAAAAAAAAP////////H///AD///////AgAAAAAAAAAAAAAAAAAAAAAH8AQBgAAAAAAAAAf////////n//+ADf/4P//IAAAAAAAAAAAAAAAAAAAAAAAP+A4AYAAAAAAAAAP////////j//+AAf/4H/+IAAAAAAAAAAAAAAAgAAAAAAAH/B4ABwAAAAAAAAP////////h//8AAf/gD/8YAAAAAAAAAAAAAAAAAAAAAAAD/lwAD8AAAAAAAAP////////x//4AAf/AD/8QAAAAAAAAAAAAAAAAAAAAAAAAf/wAAAAAAAAAAAP////////4//gAAf+AB/+AAwAAAAAAAAAAAAAAAAAAAAAAH/wAAAAAAAAAAAP////////4f+AAAf8ADP/AAwAAAAAAAAAAAAAAAAAAAAAAAH/AAAAAAAAAAAf////////8f8AAAPwAAP/gAgAAAAAAAAAAAAAAAAAAAAAAAD/gAAAAAAAAAAf////////+fgAAAPwAAP/gAwAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAAAf/////////eAAAAHwAAN/gAsAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAf/////////gBAAAHwAAE/gACAAAAAAAAAAAAAAAAAAAAAAAADABIAAAAAAAAH/////////gIAAADwAAEfgALAAAAAAAAAAAAAAAAAAAAAAAADgPfIAAAAAAAH/////////34AAADwAAIOABAAAAAAAAAAAAAAAAAAAAAAAAAAyPf+AAAAAAAD//////////4AAADoAAIEACBAAAAAAAAAAAAAAAAAAAAAAAAA8///AAAAAAAB//////////wAAABIAAMAAAHAAAAAAAAAAAAAAAAAAAAAAAAAE///gAAAAAAA//////////wAAAAMAAEAAADgAAAAAAAAAAAAAAAAAAAAAAAAAf//wAAAAAAAf/7///////gAAAAMAADAAMDAAAAAAAAAAAAAAAAAAAAAAAAAAf///gAAAAAAP/B///////gAAAAAABDgAeAAAAAAAAAAAAAAAAAAAAAAAAAAAf///wAAAAAACAAn//////AAAAAAAAxgA+AAAAAAAAAAAAAAAAAAAAAAAAAAAf///4AAAAAAAAAD/////+AAAAAAAAZgB4AAAAAAAAAAAAAAAAAAAAAAAAAAA////4AAAAAAAAAD/////8AAAAAAAAMwH8AIAAAAAAAAAAAAAAAAAAAAAAAAB////8AAAAAAAAAD/////wAAAAAAAAHQf8AIAAAAAAAAAAAAAAAAAAAAAAAAD////4AAAAAAAAAH/////gAAAAAAAAHgf8cIAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAAH/////AAAAAAAAADof8ASgAAAAAAAAAAAAAAAAAAAAAAAH////u4AAAAAAAAH/////AAAAAAAAABwP5wQwAAAAAAAAAAAAAAAAAAAAAAAH////94AAAAAAAAD////+AAAAAAAAAB+P5wAD4AAAAAAAAAAAAAAAAAAAAAAH//////4AAAAAAAB////8AAAAAAAAAA8ARQif/AAAAAAAAAAAAAAAAAAAAAAH//////8AAAAAAAA////4AAAAAAAAAAcAAAAD/gAAAAAAAAAAAAAAAAAAAAAH///////gAAAAAAA////4AAAAAAAAAAMABAAI/ywAAAAAAAAAAAAAAAAAAAAD///////gAAAAAAA////4AAAAAAAAAADgAAAIf8BAAAAAAAAAAAAAAAAAAAAD///////gAAAAAAAf///4AAAAAAAAAAB+AABA/4AAAAAAAAAAAAAAAAAAAAAB///////gAAAAAAAf///4AAAAAAAAAAAAfsgAOMAAAAAAAAAAAAAAAAAAAAAA///////AAAAAAAAf///8AAAAAAAAAAAABCAAAGgAAAAAAAAAAAAAAAAAAAAA///////AAAAAAAAP///8AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAf/////+AAAAAAAAP///8AAAAAAAAAAAAAACgCAEAAAAAAAAAAAAAAAAAAAAAf/////8AAAAAAAAf///+AQAAAAAAAAAAAAB+CAAAAAAAQAAAAAAAAAAAAAAAP/////4AAAAAAAAf///+AwAAAAAAAAAAAAD8DAAAAAAAAAAAAAAAAAAAAAAAP/////4AAAAAAAA////+AwAAAAAAAAAAAAz8DgAAAAAAAAAAAAAAAAAAAAAAH/////4AAAAAAAA////+DwAAAAAAAAAAAD/8HgAAAAAAAAAAAAAAAAAAAAAAB/////4AAAAAAAA////8PwAAAAAAAAAAAH//XgAABABAAAAAgAAAAAAAAAAAAf////4AAAAAAAA////wPgAAAAAAAAAAAP//3wAAAAAAAAAAAAAAAAAAAAAAAP////wAAAAAAAA////gPgAAAAAAAAAAAP///wAAAAAAAAAAAAAAAAAAAAAAAP////wAAAAAAAAf//+APgAAAAAAAAAAAf///8AAAAAAAAAAAAAAAAAAAAAAAP////wAAAAAAAAf//+APgEAAAAAAAAAD////+AAIAAAAAAAAAAAAAAAAAAAAP////gAAAAAAAAP//+AfAAAAAAAAAAAf////+AAEAAAAAAAAAAAAAAAAAAAAP////AAAAAAAAAP///AfAAAAAAAAAAA//////AAAAAAAAAAAAAAAAAAAAAAAP///4AAAAAAAAAP//+APAAAAAAAAAAA//////gAAAAAAAAAAAAAAAAAAAAAAf///gAAAAAAAAAH//+AOAAAAAAAAAAB//////wAAAAAAAAAAAAAAAAAAAAAAf//+AAAAAAAAAAH//4AEAAAAAAAAAAA//////4AAAAAAAAAAAAAAAAAAAAAAf//+AAAAAAAAAAH//4AAAAAAAAAAAAB//////4AAAAAAAAAAAAAAAAAAAAAAf///AAAAAAAAAAH//4AAAAAAAAAAAAA//////8AAAAAAAAAAAAAAAAAAAAAAf//+AAAAAAAAAAD//wAAAAAAAAAAAAAf/////8AAAAAAAAAAAAAAAAAAAAAAf//8AAAAAAAAAAB//gAAAAAAAAAAAAAf/////4AAAAAAAAAAAAAAAAAAAAAA///8AAAAAAAAAAB//gAAAAAAAAAAAAAf/////4AAAAAAAAAAAAAAAAAAAAAA///wAAAAAAAAAAA//AAAAAAAAAAAAAAP/////4AAAAAAAAAAAAAAAAAAAAAAf//wAAAAAAAAAAA/+AAAAAAAAAAAAAAP/AP//wAAAAAAAAAAAAAAAAAAAAAA//vgAAAAAAAAAAA/4AAAAAAAAAAAAAAP8AG//gAAAAAAAAAAAAAAAAAAAAAA//3AAAAAAAAAAAAQAAAAAAAAAAAAAAAOAAF//gAAAAAAAAAAAAAAAAAAAAAB//4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//AAABAAAAAAAAAAAAAAAAAAB//4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/AAAAgAAAAAAAAAAAAAAAAAD//4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/AAAAQAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYAAAAcAAAAAAAAAAAAAAAAAB/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAAAAD/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAD/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAADQAAAAAAAAAAAAAAAAAB/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAHAAAAAAAAAAAAAAAAAAB/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAOAAAAAAAAAAAAAAAAAAB/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAAAAAH+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAAAAAH+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAP4AAAAAAD+HgBj/AAAAgAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAACf/gAAB//////////AAAAAAAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAAAB////8Af///////////gAAAAAAAAAAAAAAAAAAAAAB34AAAAAAAAAAAAAAAGD////4D/////////////8AAAAAAAAAAAAAAAAAAAAAb8AAAAAAAAAAAc/kB//////4f/////////////+gAAAAAAAAAAAAAAAAAAAB98AAAAAAAA7+///////////x////////////////4AAAAAAAAAAAAAAHAAAB5+AAAAAAAA/////////////n////////////////gAAAAAAAAABAAAAP/+Gl/+AAAAAAAP/////////////////////////////+AAAAAAAAAAiAfsAP/////+AAAAAAA//////////////////////////////oAAAAAAAAH////////////wAAAAAAF//////////////////////////////AAAAAAAAH////////////wAAAAAAf///////////////////////////////gAAAAAD+P///////////8AAAAAAP////////////////////////////////zgAAAAA////////////PgCAAD8A/////////////////////////////////+AAAAB4B////////////wwAAD+AA///////////////////////////////8AAAAAAAA////////////wA/A/gAH///////////////////////////////+AAAAABgf//////////////gAAA/////////////////////////////////+AAAAAAAH//////////////4D////////////////////////////////////4AAAB/X//////////////////////////////////////////////////////4A/gD/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////";
 const LB=Uint8Array.from(atob(LAND),c=>c.charCodeAt(0));
@@ -85,7 +193,7 @@ const C=document.getElementById('gc'),ctx=C.getContext('2d');
 let W,H,cx,cy,gR;
 function resize(){const d=Math.min(devicePixelRatio,2);W=innerWidth;H=innerHeight;C.width=W*d;C.height=H*d;C.style.width=W+'px';C.style.height=H+'px';ctx.setTransform(d,0,0,d,0,0);cx=W*.5;cy=H*.95;gR=W*.336;}
 resize();addEventListener('resize',resize);
-let mx=0,my=0,mxPx=0,myPx=0;addEventListener('mousemove',e=>{mx=(e.clientX/W-.5)*2;my=(e.clientY/H-.5)*2;mxPx=e.clientX;myPx=e.clientY;});
+let mx=0,my=0,mxPx=0,myPx=0;addEventListener('mousemove',e=>{const r=C.getBoundingClientRect();mxPx=e.clientX-r.left;myPx=e.clientY-r.top;mx=(mxPx/W-.5)*2;my=(myPx/H-.5)*2;});
 
 function proj(x,y,z,ry,rx){let x1=x*Math.cos(ry)+z*Math.sin(ry),z1=-x*Math.sin(ry)+z*Math.cos(ry),y1=y*Math.cos(rx)-z1*Math.sin(rx),z2=y*Math.sin(rx)+z1*Math.cos(rx);const f=3.8,s=f/(f+z2);return{sx:cx+x1*gR*s,sy:cy+y1*gR*s,z:z2,s};}
 

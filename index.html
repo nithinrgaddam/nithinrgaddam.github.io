@@ -153,17 +153,19 @@ function isLand(lat,lon){
 }
 
 // Generate land dots
-const landDots=[];
-const step=.9;
-for(let lat=89;lat>=-89;lat-=step){
-  const lonStep=step/Math.max(0.3,Math.cos(lat*Math.PI/180));
-  for(let lon=-180;lon<180;lon+=lonStep){
-    if(!isLand(lat,lon))continue;
-    const rl=lat+(Math.random()-.5)*step*.25;
-    const rn=lon+(Math.random()-.5)*lonStep*.25;
-    const phi=(90-rl)*Math.PI/180;
-    const theta=(rn+180)*Math.PI/180;
-    landDots.push([-Math.sin(phi)*Math.cos(theta),-Math.cos(phi),Math.sin(phi)*Math.sin(theta)]);
+let landDots=[];
+function genDots(step){
+  landDots=[];
+  for(let lat=89;lat>=-89;lat-=step){
+    const lonStep=step/Math.max(0.3,Math.cos(lat*Math.PI/180));
+    for(let lon=-180;lon<180;lon+=lonStep){
+      if(!isLand(lat,lon))continue;
+      const rl=lat+(Math.random()-.5)*step*.25;
+      const rn=lon+(Math.random()-.5)*lonStep*.25;
+      const phi=(90-rl)*Math.PI/180;
+      const theta=(rn+180)*Math.PI/180;
+      landDots.push([-Math.sin(phi)*Math.cos(theta),-Math.cos(phi),Math.sin(phi)*Math.sin(theta)]);
+    }
   }
 }
 
@@ -190,8 +192,19 @@ orbitParams.forEach(({inc,off})=>{const pts=[];const ir=inc*Math.PI/180,or=off*M
 
 // Canvas
 const C=document.getElementById('gc'),ctx=C.getContext('2d');
-let W,H,cx,cy,gR;
-function resize(){const d=Math.min(devicePixelRatio,2);W=innerWidth;H=innerHeight;C.width=W*d;C.height=H*d;C.style.width=W+'px';C.style.height=H+'px';ctx.setTransform(d,0,0,d,0,0);cx=W*.5;cy=H*.95;gR=W*.336;}
+let W,H,cx,cy,gR,isMobile=false,lastW=0,dotStep=0;
+function resize(){
+  const mobile=matchMedia('(max-width:768px)').matches;
+  // Mobile browsers change the viewport height when the address bar shows/hides on scroll; ignore those height-only resizes so the globe doesn't shift
+  if(mobile&&W&&innerWidth===lastW)return;
+  isMobile=mobile;lastW=innerWidth;
+  const d=Math.min(devicePixelRatio,mobile?3:2);
+  W=innerWidth;H=innerHeight;C.width=W*d;C.height=H*d;C.style.width=W+'px';C.style.height=H+'px';ctx.setTransform(d,0,0,d,0,0);cx=W*.5;
+  if(mobile){cy=H*.85;gR=W*.5;}else{cy=H*.95;gR=W*.336;}
+  // Keep the same on-screen dot density as desktop so the smaller mobile globe stays crisp instead of blobby
+  const ns=mobile?Math.max(.9,8/(gR*Math.PI/180)):.9;
+  if(ns!==dotStep){dotStep=ns;genDots(ns);}
+}
 resize();addEventListener('resize',resize);
 let mx=0,my=0,mxPx=0,myPx=0;addEventListener('mousemove',e=>{const r=C.getBoundingClientRect();mxPx=e.clientX-r.left;myPx=e.clientY-r.top;mx=(mxPx/W-.5)*2;my=(myPx/H-.5)*2;});
 
@@ -202,7 +215,7 @@ function frame(){
   requestAnimationFrame(frame);t+=.016;
   ctx.clearRect(0,0,W,H);
   const ry=t*.06,rx=-.25;
-  const msx=mxPx,msy=myPx;
+  const msx=isMobile?cx:mxPx,msy=isMobile?cy-gR*.5:myPx;
 
   // Atmospheric glow — edge-only, drawn 3x for intensity
   for(let gi=0;gi<6;gi++){

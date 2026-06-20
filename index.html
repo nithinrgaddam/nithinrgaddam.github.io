@@ -27,7 +27,7 @@ h1 .char{opacity:0;display:inline-block}
 .bs:hover{color:var(--cream);border-color:rgba(255,255,255,.4)}
 .cs{position:absolute;bottom:44px;left:0;right:0;z-index:10;display:flex;justify-content:center;gap:38px;flex-wrap:wrap;opacity:0;transition:opacity .6s,transform .6s;transform:translateY(26px)}
 .ci{font-size:.74rem;font-weight:400;letter-spacing:.11em;text-transform:uppercase;color:rgba(210,205,195,.45)}
-@media(max-width:768px){.hc{margin-top:-3vh}.cs{gap:18px;bottom:20px;padding:0 14px}.ci{font-size:.65rem}.b{padding:15px 32px;font-size:.95rem}}
+@media(max-width:768px){.hero{min-height:100svh}.hc{margin-top:-3vh}.cs{gap:18px;bottom:20px;padding:0 14px}.ci{font-size:.65rem}.b{padding:15px 32px;font-size:.95rem}}
 @media(max-width:480px){.br{flex-direction:column;align-items:center}}
 .approach{max-width:1100px;width:100%;margin:0 auto;padding:180px 48px 120px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;scroll-margin-top:100px}
 .approach-left{position:sticky;top:200px}
@@ -191,7 +191,7 @@ const orbitParams=[{inc:20,off:0},{inc:45,off:30},{inc:-15,off:60},{inc:65,off:9
 orbitParams.forEach(({inc,off})=>{const pts=[];const ir=inc*Math.PI/180,or=off*Math.PI/180;for(let i=0;i<=180;i++){const a=(i/180)*Math.PI*2;const x=Math.cos(a);const y0=Math.sin(a)*Math.cos(ir);const z0=Math.sin(a)*Math.sin(ir);const x1=x*Math.cos(or)-z0*Math.sin(or);const z1=x*Math.sin(or)+z0*Math.cos(or);pts.push([x1*1.02,y0*1.02,z1*1.02]);}orbits.push(pts);});
 
 // Canvas
-const C=document.getElementById('gc'),ctx=C.getContext('2d');
+const C=document.getElementById('gc'),ctx=C.getContext('2d'),heroEl=document.querySelector('.hero');
 let W,H,cx,cy,gR,isMobile=false,lastW=0,dotStep=0;
 function resize(){
   const mobile=matchMedia('(max-width:768px)').matches;
@@ -199,7 +199,7 @@ function resize(){
   if(mobile&&W&&innerWidth===lastW)return;
   isMobile=mobile;lastW=innerWidth;
   const d=Math.min(devicePixelRatio,mobile?3:2);
-  W=innerWidth;H=innerHeight;C.width=W*d;C.height=H*d;C.style.width=W+'px';C.style.height=H+'px';ctx.setTransform(d,0,0,d,0,0);cx=W*.5;
+  W=innerWidth;H=mobile?heroEl.clientHeight:innerHeight;C.width=W*d;C.height=H*d;C.style.width=W+'px';C.style.height=H+'px';ctx.setTransform(d,0,0,d,0,0);cx=W*.5;
   if(mobile){cy=H*.85;gR=W*.5;}else{cy=H*.95;gR=W*.336;}
   // Keep the same on-screen dot density as desktop so the smaller mobile globe stays crisp instead of blobby
   const ns=mobile?Math.max(.9,8/(gR*Math.PI/180)):.9;

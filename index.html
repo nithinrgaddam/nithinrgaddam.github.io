@@ -206,7 +206,12 @@ function resize(){
   if(ns!==dotStep){dotStep=ns;genDots(ns);}
 }
 resize();addEventListener('resize',resize);
-let mx=0,my=0,mxPx=0,myPx=0;addEventListener('mousemove',e=>{const r=C.getBoundingClientRect();mxPx=e.clientX-r.left;myPx=e.clientY-r.top;mx=(mxPx/W-.5)*2;my=(myPx/H-.5)*2;});
+let mx=0,my=0,mxPx=isMobile?-1e6:0,myPx=isMobile?-1e6:0;
+function setHL(px,py){const r=C.getBoundingClientRect();mxPx=px-r.left;myPx=py-r.top;mx=(mxPx/W-.5)*2;my=(myPx/H-.5)*2;}
+addEventListener('mousemove',e=>setHL(e.clientX,e.clientY));
+addEventListener('touchstart',e=>{const t=e.touches[0];if(t)setHL(t.clientX,t.clientY);},{passive:true});
+addEventListener('touchmove',e=>{const t=e.touches[0];if(t)setHL(t.clientX,t.clientY);},{passive:true});
+addEventListener('touchend',()=>{if(isMobile){mxPx=-1e6;myPx=-1e6;}});
 
 function proj(x,y,z,ry,rx){let x1=x*Math.cos(ry)+z*Math.sin(ry),z1=-x*Math.sin(ry)+z*Math.cos(ry),y1=y*Math.cos(rx)-z1*Math.sin(rx),z2=y*Math.sin(rx)+z1*Math.cos(rx);const f=3.8,s=f/(f+z2);return{sx:cx+x1*gR*s,sy:cy+y1*gR*s,z:z2,s};}
 
@@ -215,7 +220,7 @@ function frame(){
   requestAnimationFrame(frame);t+=.016;
   ctx.clearRect(0,0,W,H);
   const ry=t*.06,rx=-.25;
-  const msx=isMobile?cx:mxPx,msy=isMobile?cy-gR*.5:myPx;
+  const msx=mxPx,msy=myPx;
 
   // Atmospheric glow — edge-only, drawn 3x for intensity
   for(let gi=0;gi<6;gi++){
